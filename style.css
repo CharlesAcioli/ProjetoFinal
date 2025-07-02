@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    /* background: orange; */
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+header div{
+    margin-right: 20px;
+}
+
+div{
+    /* background: blue; */
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+
+button{
+    width: 45%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:nth-child(2){
+    background-color: #0F9FE8;
+    color: #fff;
+}
+
+button:hover{
+    box-shadow: 0 4px 5px gray;
+}
+
+nav{
+    /* background: orange; */
+    margin-top: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+a{
+    background: #1262BB;
+    width: 200px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+section{
+    background: #D9D9D9;
+    height: 78vh;
+    display: flex;
+}
+
+section:nth-child(4){
+    background-color: #fff;
+    height: 100vh;
+}
+
+figure{
+    width: 100%;
+    height: 100%;
+    /* background: orange; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section:nth-child(4) figure{
+    background: #fff;
+    flex-direction: row-reverse;
+}
+
+figure img{
+    width: 40%;
+    margin: 10px;
+}
+
+figure:nth-child(1) img{
+    width: 20%;
+    background: #1262BB;
+}
+
+figcaption{
+    /* background: orange; */
+    width: 40%;
+    font-size: 30px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    a{
+        width: 110px;
+    }
+
+    header div{
+        margin-right: 0;
+    }
+}
