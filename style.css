@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    font-family:sans-serif;
     box-sizing: border-box;
 }
 
@@ -65,15 +66,22 @@ a{
     text-decoration: none;
 }
 
+a:hover{
+    box-shadow: 4px 2px 5px gray;
+}
+
 section{
-    background: #D9D9D9;
+    height: 100vh;
+}
+
+#about{
+    background: #fff;
     height: 78vh;
     display: flex;
 }
 
-section:nth-child(4){
-    background-color: #fff;
-    height: 100vh;
+#operacoes{
+    background: #fff;
 }
 
 figure{
@@ -85,7 +93,7 @@ figure{
 }
 
 section:nth-child(4) figure{
-    background: #fff;
+    background: #D9D9D9;
     flex-direction: row-reverse;
 }
 
@@ -95,7 +103,11 @@ figure img{
 }
 
 #solucoes img{
-    width: 40%;
+    width: 30%;
+}
+
+#operacoes img{
+    width: 50%;
 }
 
 figcaption{
@@ -113,8 +125,24 @@ figcaption{
         margin-right: 0;
     }
 
+    #about{
+        height: 75vh;
+    }
+
     section{
-        height: 40vh;
+        height: 100vh;
+    }
+
+    section:nth-child(4) figure{
+        flex-direction: column;
+    }
+
+    #solucoes img{
+        width: 90%;
+    }
+
+    #operacoes img{
+        width: 90%;
     }
     
     figure{
