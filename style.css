@@ -127,15 +127,56 @@ footer{
     width: 70%;
 }
 
+.f-section, ul{
+    display: flex;
+    flex-direction: column;
+}
+
 .f-section{
     width: 20%;
     height: 20vh;
-    background: orange;
+}
+
+h3{
+    margin-top: 5px;
+}
+
+ul{
+    padding-left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: start;
+}
+
+.contatos li a{
+    background: none;
+    margin: 0;
+    width: auto;
+    height: auto;
+    font-size: 17px;
+    box-shadow: none;
+}
+
+li{
+    margin-top: 5px;
+    list-style-type: none;
+}
+
+i{
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.footer-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 768px) {
     a{
-        width: 110px;
+        width: 32%;
     }
 
     header div{
@@ -170,5 +211,17 @@ footer{
         width: 90%;
         font-size: 15px;
         /* text-align: start; */
+    }
+
+    footer{
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .f-section{
+        width: 90%;
+        height: auto;
+        text-align: start;
     }
 }
