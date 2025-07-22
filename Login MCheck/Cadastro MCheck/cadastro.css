@@ -85,5 +85,9 @@ button:hover {
     h1, label, input, select, button{
         visibility: visible;
     }
+
+    select{
+        width: 100%;
+    }
 }
  
