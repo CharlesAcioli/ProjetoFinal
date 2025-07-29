@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cnpj = $_POST['cnpj'];
 
     try {
-        $stmt = $conn->prepare("INSERT INTO equipamentos (nome_equipamento, tipo_equipamento, status, localizacao, fabricante, numero_modelo, numero_serie, criticidade, departamento, atribuido_a, data_instalacao, data_compra, data_termino_garantia, custo_compra, especificacoes, dados_uso, notas, patrimonio, cnpj_empresa) VALUES (:nome_equipamento, :tipo_equipamento, :status, :localizacao, :fabricante, :numero_modelo, :numero_serie, :criticidade, :departamento, :atribuido_a, :data_instalacao, :data_compra, :data_garantia_param, :custo_compra, :especificacoes, :dados_uso, :notas, :patrimonio, :cnpj)");
+        $stmt = $conn->prepare("INSERT INTO equipamentos (nome_equipamento, tipo_equipamento, status, localizacao, fabricante, numero_modelo, numero_serie, criticidade, departamento, atribuido_a, data_instalacao, data_compra, data_termino_garantia, custo_compra, especificacoes, dados_uso, notas, patrimonio, cnpj) VALUES (:nome_equipamento, :tipo_equipamento, :status, :localizacao, :fabricante, :numero_modelo, :numero_serie, :criticidade, :departamento, :atribuido_a, :data_instalacao, :data_compra, :data_garantia_param, :custo_compra, :especificacoes, :dados_uso, :notas, :patrimonio, :cnpj)");
 
         $stmt->bindParam(':nome_equipamento', $nome_equipamento);
         $stmt->bindParam(':tipo_equipamento', $tipo_equipamento);

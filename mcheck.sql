@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           8.0.34 - MySQL Community Server - GPL
+-- Versão do servidor:           8.0.30 - MySQL Community Server - GPL
 -- OS do Servidor:               Win64
 -- HeidiSQL Versão:              12.1.0.6537
 -- --------------------------------------------------------
@@ -52,7 +52,6 @@ CREATE TABLE IF NOT EXISTS `equipamentos` (
   `tipo_equipamento` varchar(100) NOT NULL,
   `status` varchar(50) NOT NULL,
   `localizacao` varchar(255) NOT NULL,
-  `id_identificador` varchar(50) NOT NULL,
   `fabricante` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `numero_modelo` varchar(100) DEFAULT NULL,
   `numero_serie` varchar(100) DEFAULT NULL,
@@ -69,14 +68,16 @@ CREATE TABLE IF NOT EXISTS `equipamentos` (
   `data_registro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ultima_atualizacao` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `patrimonio` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `cnpj` varchar(18) NOT NULL,
   PRIMARY KEY (`equipamento_id`),
-  UNIQUE KEY `id_identificador` (`id_identificador`),
   UNIQUE KEY `numero_serie` (`numero_serie`),
-  KEY `FK_equipamentos_empresas` (`patrimonio`) USING BTREE,
-  CONSTRAINT `FK_equipamentos_empresas` FOREIGN KEY (`patrimonio`) REFERENCES `empresas` (`cnpj`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `FK_equipamentos_empresas` (`cnpj`),
+  CONSTRAINT `FK_equipamentos_empresas` FOREIGN KEY (`cnpj`) REFERENCES `empresas` (`cnpj`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela mcheck.equipamentos: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela mcheck.equipamentos: ~1 rows (aproximadamente)
+INSERT INTO `equipamentos` (`equipamento_id`, `nome_equipamento`, `tipo_equipamento`, `status`, `localizacao`, `fabricante`, `numero_modelo`, `numero_serie`, `criticidade`, `departamento`, `atribuido_a`, `data_instalacao`, `data_compra`, `custo_compra`, `data_termino_garantia`, `especificacoes`, `dados_uso`, `notas`, `data_registro`, `ultima_atualizacao`, `patrimonio`, `cnpj`) VALUES
+	(1, 'Servidor Web Principal', 'Servidor', 'Em manutenção', 'Rack 3, Sala de Servidores, Prédio B', 'HP Enterprise', 'ProLiant DL380 Gen10', 'BRW001234567', 'alta', 'Tecnologia da Informação (TI)', 'Equipe de Infraestrutura de Redes', '2025-07-07', '2025-05-06', 1850000.00, '2029-06-12', 'Processador Intel Xeon Gold, 128GB RAM, 4x SSD NVMe de 1TB, Debian Linux 12.', 'Hospeda aplicações críticas e banco de dados. Carga média de CPU: 40%, utilização de RAM: 60%. Monitoramento 24/7.', 'Necessita de revisão de segurança trimestral. Backup diário configurado para nuvem.', '2025-07-29 15:32:55', '2025-07-29 15:32:55', '11223344000155', '98.765.432/0001-21');
 
 -- Copiando estrutura para tabela mcheck.funcionarios
 DROP TABLE IF EXISTS `funcionarios`;
