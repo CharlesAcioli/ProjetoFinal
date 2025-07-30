@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    font-family: serif;
+}
+
+/* body{
+    background: orange;
+} */
+
+form{
+    background: orange;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    width: 13%;
+    /* background: blue; */
+    text-align: left;
+}
