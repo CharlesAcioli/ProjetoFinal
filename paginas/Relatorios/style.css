@@ -60,23 +60,17 @@ main {
 .conte {
     max-width: 70%;
     width: 80%;
-    padding: 10px;
+    padding: 50px;
     background-color: #F8F8F8;
     box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.3);
-    position: relative;
-    left: 15%;
+    margin: 80px auto;
 }
 
 .conte h3 {
-    color: #304F6E;
+    color: #000000;
     margin: 15px;
 }
 
-.add-equip label {
-    display: block;
+.atualizacao {
+    color: #08f563;
 }
-
-.grupo-form {
-    
-}
-
