@@ -13,10 +13,14 @@
     </header>
     <form action="" method="post">
         <h1>Cadastro Funcionário</h1><br><br>
-        <label for="">NOME</label>
-        <input type="text" placeholder="Seu primeiro nome"><br>
-        <label for="">SOBRENOME</label>
-        <input type="text" placeholder="Seu sobrenome"><br>
+        <label for="">NOME COMPLETO</label>
+        <input type="text" placeholder="Informe seu nome completo"><br>
+        <label for="">ENDEREÇO</label>
+        <input type="text" placeholder="Informe seu endereço"><br>
+        <label for="">BAIRRO</label>
+        <input type="text" placeholder="Informe o bairro que corresponde ao seu endereço"><br>
+        <label for="">CEP</label>
+        <input type="text" placeholder="Informe o CEP referente a sua residência"><br>
         <label for="">TELEFONE</label>
         <input type="number" placeholder="Informe seu número de telefone"><br>
         <label for="">CPF</label>
@@ -33,7 +37,21 @@
         <input type="text" placeholder="Confirme sua senha"><br>
         <label for="">TIPO DE USUÁRIO</label>
         <select name="" id="">
-            <option value=""></option>
+            <option value="">Master</option>
+            <option value="">Gerente</option>
+            <option value="">Líder</option>
+        </select><br>
+        <label for="">CARGO OCUPANTE</label>
+        <select name="" id="">
+            <option value="">Gerente</option>
+            <option value="">Supervisor</option>
+            <option value="">Demais Funções</option>
+        </select><br>
+        <label for="">SETOR</label>
+        <select name="" id="">
+            <option value="">Gerencia</option>
+            <option value="">RH</option>
+            <option value="">Estoque</option>
         </select><br><br>
         <button type="submit">Cadastar</button>
     </form>
