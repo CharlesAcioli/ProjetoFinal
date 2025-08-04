@@ -1,12 +1,9 @@
 <?php
-
 session_start();
-
 $host = 'localhost';
 $user = 'root';
 $pass = '';
 $db = 'mcheck';
-
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
@@ -17,7 +14,6 @@ try {
     die("Erro de conexão com o banco de dados: " . $e->getMessage());
 }
 
-
 try {
     $stmt = $conn->prepare("SELECT * FROM equipamentos ORDER BY equipamento_id DESC");
     $stmt->execute();
@@ -26,7 +22,6 @@ try {
 } catch (PDOException $e) {
     die("Erro ao buscar equipamentos: " . $e->getMessage());
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +33,7 @@ try {
 </head>
 
 <body>
+
     <h1>Equipamentos Registrados</h1>
 
     <?php if ($equipamentos): ?>
@@ -62,7 +58,5 @@ try {
     <?php else: ?>
         <p class="no-data">Nenhum equipamento encontrado no banco de dados.</p>
     <?php endif; ?>
-
 </body>
-
 </html>
