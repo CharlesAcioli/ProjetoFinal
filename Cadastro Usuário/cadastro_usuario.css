@@ -85,6 +85,10 @@ button:hover {
   color: white;
 }
 
+footer{
+  height: 30px;
+}
+
 @media screen and (max-width:768px) {
 
     header img{
