@@ -12,14 +12,14 @@ body {
 
 
 .menu {
-    width: 30vh;
+    width: 35vh;
     height: 100vh;
     background-color: #7497FF;
-    background-size: cover;
+    /* background-size: cover; */
 }
 
 hr {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .logo {
@@ -37,8 +37,18 @@ hr {
 .manu,
 .config {
     display: flex;
-    gap: 0.4em;
+    gap: 0.7em;
     margin: 10px;
+}
+
+.equipamentos img,
+.add img,
+.defeito img,
+.user img,
+.relat img,
+.manu img,
+.config img {
+    width: 10%;
 }
 
 .config, h3 {
@@ -111,6 +121,6 @@ main {
 }
 
 
-
-
-
+@media screen and (width: 768px) {
+    
+}
