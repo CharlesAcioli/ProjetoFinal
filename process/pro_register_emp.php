@@ -1,6 +1,5 @@
 <?php
 include_once('../php/config.php');
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cnpj = $_POST['cnpj'];
     $razao = $_POST['razao'];
