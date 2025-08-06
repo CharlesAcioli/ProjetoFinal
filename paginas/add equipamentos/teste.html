@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Novo Equipamento</title>
+    <link rel="stylesheet" href="teste.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Adicionar Novo Equipamento</h1>
+        <form class="equipment-form">
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label for="equipment-name">Nome do Equipamento</label>
+                    <input type="text" id="equipment-name">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="equipment-type">Tipo do equipamento</label>
+                    <select id="equipment-type">
+                        <option selected disabled>Selecione o tipo do equipamento</option>
+                        <option value="servidor">Servidor</option>
+                        <option value="roteador">Roteador</option>
+                        <option value="bomba">Bomba</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status">
+                        <option selected disabled>Selecione o tipo do status</option>
+                        <option value="ativo">Ativo</option>
+                        <option value="inativo">Inativo</option>
+                        <option value="manutencao">Em manutenção</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="location">Localização</label>
+                    <input type="text" id="location" placeholder="Ex: Setor 01, Baia A">
+                </div>
+                <div class="form-group">
+                    <label for="manufacturer">Fabricação</label>
+                    <input type="text" id="manufacturer" placeholder="Ex: FlowServer">
+                </div>
+                <div class="form-group">
+                    <label for="model-number">Número do modelo</label>
+                    <input type="text" id="model-number" placeholder="Ex: CS-5000">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="serial-number">Número de série</label>
+                    <input type="text" id="serial-number" placeholder="Ex: FSN-98765">
+                </div>
+                <div class="form-group">
+                    <label for="criticality">Criticidade</label>
+                    <select id="criticality">
+                        <option selected disabled>Selecione um nível de criticalidade</option>
+                        <option value="baixa">Baixa</option>
+                        <option value="media">Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </div>
+                 <div class="form-group">
+                    <label for="department">Departamento</label>
+                    <input type="text" id="department" placeholder="Ex: Sistema de Refrigeração">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="assigned-to">Atribuído a:</label>
+                    <input type="text" id="assigned-to" placeholder="Ex: Equipe de Operações">
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
