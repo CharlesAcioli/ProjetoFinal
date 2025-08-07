@@ -1,3 +1,12 @@
+<?php 
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if(isset($_POST['sair']) && $_POST['sair'] === 'sair'){
+        header("Location:../index.php");
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -53,7 +62,8 @@
             <option value="">RH</option>
             <option value="">Estoque</option>
         </select><br><br>
-        <button type="submit">Cadastar</button>
+        <button type="submit" name="cadastrar">Cadastar</button>
+        <button type="submit" name="sair" value="sair">Sair</button>
     </form>
     <footer>&copy;MCheck</footer>
 </body>
