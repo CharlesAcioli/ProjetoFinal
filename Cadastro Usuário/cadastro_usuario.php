@@ -4,6 +4,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         header("Location:../index.php");
         exit();
     }
+    
+    if(isset($_POST['cadastrar']) && $_POST['cadastrar'] === 'cadastrar'){
+        header("Location:cadastrar_usuario.php");
+        exit();
+    }
 }
 ?>
 
@@ -62,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             <option value="">RH</option>
             <option value="">Estoque</option>
         </select><br><br>
-        <button type="submit" name="cadastrar">Cadastar</button>
+        <button type="submit" name="cadastrar" value="cadastrar">Cadastar</button>
         <button type="submit" name="sair" value="sair">Sair</button>
     </form>
     <footer>&copy;MCheck</footer>
