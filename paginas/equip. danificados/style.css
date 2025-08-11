@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    font-family: "Inter", sans-serif;
+}
+
+
+.menu {
+    width: 30vh;
+    height: 100vh;
+    background-color: #7497FF;
+    background-size: cover;
+}
+
+hr {
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.equipamentos,
+.add,
+.defeito,
+.user,
+.ordem,
+.relat,
+.manu,
+.config {
+    display: flex;
+    gap: 0.4em;
+    margin: 10px;
+}
+
+.config, h3 {
+    position: relative;
+    top: 0.2em;
+    color: white;
+    font-weight: bold;
+}
+
+main {
+    width: 100%;
+}
+
+
+.painel {
+    margin: 10px;
+}
+
+.conte {
+    max-width: 70%;
+    height: 150px;
+    width: 80%;
+    padding: 50px;
+    background-color: #F8F8F8;
+    box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.3);
+    margin: 80px auto;
+    display: flex;
+    gap: 10rem;
+}
+
+.conte h3 {
+    color: #000000;
+    margin: 15px;
+}
+
+
+.inventario {
+    color: #304F6E;
+    margin: 20px;
+    display: flex;
+    gap: 87rem; 
+}
+
+form input[type="text"] {
+width: 400px;
+height: 35px;
+border-radius: 5px;
+
+}
+
+select {
+    width: 400px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.butao button {
+    height: 40px; 
+    width: 250px;  
+    font-size: 16px; 
+    background-color:#007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

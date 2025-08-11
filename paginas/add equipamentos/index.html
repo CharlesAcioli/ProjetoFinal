@@ -67,60 +67,126 @@
     </header>
 
     <main>
-        <div class="painel">
-          <h2>PAINEL</h2>
+      <div class="painel">
+        <h2>PAINEL</h2>
+      </div>
+
+      <hr />
+
+      <div class="container">
+        
+        <div class="card">
+            <div class="card-header">Adicionar Novo Equipamento</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="nome">Nome do Equipamento</label>
+                    <input type="text" id="nome" placeholder="Ex: Bomba Centrífuga">
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo do equipamento</label>
+                    <input type="text" name="Tip. equip" placeholder="Tipo De Equipamento" id="">
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status">
+                        <option value="">Em Manutenção</option>
+                        <option value="">Precisa De Reparo</option>
+                        <option value="">Operacional</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="localizacao">Localização</label>
+                    <input type="text" id="localizacao" placeholder="Ex: Setor 01, Baia A">
+                </div>
+                <div class="form-group">
+                    <label for="fabricacao">Fabricação</label>
+                    <input type="text" id="fabricacao" placeholder="Ex: FlowServer">
+                </div>
+                <div class="form-group">
+                    <label for="modelo">Número do modelo</label>
+                    <input type="text" id="modelo" placeholder="Ex: CS-5000">
+                </div>
+                <div class="form-group">
+                    <label for="serie">Número de série</label>
+                    <input type="text" id="serie" placeholder="Ex: FSN-98765">
+                </div>
+                <div class="form-group">
+                    <label for="criticidade">Criticidade</label>
+                    <select id="criticidade">
+                        <option value="">Alto</option>
+                        <option value="">Médio</option>
+                        <option value="">Baixo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="departamento">Departamento</label>
+                    <input type="text" id="departamento" placeholder="Ex: Sistema de Refrigeração">
+                </div>
+                <div class="form-group form-group-full">
+                    <label for="atribuido">Atribuído a:</label>
+                    <input type="text" id="atribuido" placeholder="Ex: Equipe de Operações">
+                </div>
+            </div>
         </div>
 
-        <hr />
-
-          <h2>Adicionar Novo Equipamento</h2>
-          <form action="" method="post">
-
-            <div class="teste1">
-              <label for="nm.eqp">Nome Do Equipamento</label>
-              <input type="text" name="" id="">
-
-              <label for="tipo.eqp">Tipo Do Equipamento</label>
-              <input type="text" name="" id="">
-
-              <label for="status">Status</label>
-              <select name="" id="">
-                <option value="">Em Manutenção</option>
-                <option value="">Precisa De Reparo</option>
-                <option value="">Operacional</option>
-              </select>
+        <div class="card-secondary">
+            
+            <div class="card-section">
+                <div class="card-section-header">Datas e Custos</div>
+                <div class="form-group">
+                    <label for="data_instalacao">Data de Instalação</label>
+                    <div class="date-input">
+                        <input type="text" id="data_instalacao" placeholder="Escolha a data">
+                        <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="data_compra">Data da Compra</label>
+                    <div class="date-input">
+                        <input type="text" id="data_compra" placeholder="Escolha a data">
+                        <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="custo_compra">Custo de Compra</label>
+                    <input type="text" id="custo_compra" placeholder="Ex: 1500">
+                </div>
+                <div class="form-group">
+                    <label for="garantia">Data de Término da Garantia</label>
+                    <div class="date-input">
+                        <input type="text" id="garantia" placeholder="Escolha a data">
+                        <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario">
+                    </div>
+                </div>
             </div>
 
-            <div class="teste2">
-              <label for="">Localização</label>
-              <input type="text" name="" id="">
-
-              <label for="">Fabricação</label>
-              <input type="text" name="" id="">
-
-              <label for="">Número Do Modelo</label>
-              <input type="text" name="" id="">
+            <div class="card-section">
+                <div class="card-section-header">Detalhes e Notas</div>
+                <div class="textarea-group">
+                    <label for="especificacoes">Especificações</label>
+                    <textarea id="especificacoes" placeholder="Por exemplo, Capacidade: 500GPM, Altura: 20 Metros, Motor: 50 HP"></textarea>
+                </div>
+                <div class="textarea-group">
+                    <label for="dados_uso">Dados de Uso</label>
+                    <textarea id="dados_uso" placeholder="Por exemplo, Total de horas de operação"></textarea>
+                </div>
+                <div class="textarea-group">
+                    <label for="nota">Nota</label>
+                    <textarea id="nota" placeholder="Qualquer notas adicionais sobre o equipamento"></textarea>
+                </div>
             </div>
-
-            <div class="teste3">
-              <label for="">Número De Série</label>
-              <input type="text" name="" id="">
-
-              <label for="">Criticalidade</label>
-              <select name="" id="">
-                <option value="">Baixo</option>
-                <option value="">Médio</option>
-                <option value="">Alto</option>
-              </select>
-
-              <label for=""></label>
-              <input type="text" name="Departamento" id="">
-            </div>
-
-            <label for="">Atribuido a:</label>
-            <input type="text" name="" id="">
-          </form>
         </div>
+
+        <div class="button-container">
+            <button class="submit-button">
+                <img src="https://img.icons8.com/material-rounded/24/ffffff/save.png" alt="Salvar">
+                Item/Equipamento Solicitado*
+            </button>
+        </div>
+
+    </div>
+        </form>
+      </div>
     </main>
   </body>
 </html>
