@@ -1,19 +1,3 @@
-<?php
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    if(isset($_POST['login']) && $_POST['login']){
-    header("Location:/Login MCheck/login.php");
-    exit();
-}
-
-if(isset($_POST['registrar']) && $_POST['registrar'] === 'registrar'){
-    header("Location:");
-    exit();
-}
-}
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 

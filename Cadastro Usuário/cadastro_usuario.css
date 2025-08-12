@@ -102,6 +102,10 @@ footer{
         padding: 0 0 20px 0;
     }
 
+    h1{
+      font-size: 25px;
+    }
+
     button{
         width: 50%;
         height: 30px;

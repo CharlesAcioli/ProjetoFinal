@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             <option value="">RH</option>
             <option value="">Estoque</option>
         </select><br><br>
-        <button type="submit" name="cadastrar" value="cadastrar">Cadastar</button>
+        <button type="submit" name="cadastrar" value="cadastrar">Cadastar</button><br>
         <button type="submit" name="sair" value="sair">Sair</button>
     </form>
     <footer>&copy;MCheck</footer>
