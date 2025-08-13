@@ -5,8 +5,9 @@ try {
     $stmt = $conn->prepare("SELECT * FROM empresas");
     $stmt->execute();
     $empresas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $_SESSION['empresas_globais'] = $empresas;
-    
+    // Nota: O uso de $_SESSION['empresas_globais'] não é ideal
+    // para esta página, pois os dados já são buscados.
+    // Mantenha apenas a variável $empresas para a exibição.
 } catch (PDOException $e) {
     echo "Erro ao buscar os dados: " . $e->getMessage();
 }
@@ -18,17 +19,69 @@ try {
     <meta charset="UTF-8">
     <title>Lista de Empresas</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
+            background-color: #fff;
         }
+        
         th, td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
+        
         th {
-            background-color: #f2f2f2;
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .voltar {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .voltar a {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .voltar a:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-acao {
+            padding: 5px 10px;
+            margin: 0 2px;
+            text-decoration: none;
+            border-radius: 3px;
+            color: white;
+        }
+
+        .btn-editar {
+            background-color: #ffc107;
+        }
+
+        .btn-excluir {
+            background-color: #dc3545;
         }
     </style>
 </head>
@@ -37,8 +90,7 @@ try {
     <h1>Empresas Cadastradas</h1>
 
     <?php
-    if (isset($_SESSION['empresas_globais']) && !empty($_SESSION['empresas_globais'])) {
-        $empresas = $_SESSION['empresas_globais'];
+    if ($empresas) {
     ?>
     
     <table>
@@ -50,6 +102,7 @@ try {
                 <th>Inscrição Estadual</th>
                 <th>Segmento</th>
                 <th>E-mail</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -62,6 +115,10 @@ try {
                 echo "<td>" . htmlspecialchars($empresa['inscricao_estadual']) . "</td>";
                 echo "<td>" . htmlspecialchars($empresa['segmento']) . "</td>";
                 echo "<td>" . htmlspecialchars($empresa['email_contato']) . "</td>";
+                echo "<td>";
+                echo "<a href='editarEmpresa.php?cnpj=" . htmlspecialchars($empresa['cnpj']) . "' class='btn-acao btn-editar'>Editar</a>";
+                echo "<a href='excluirEmpresa.php?cnpj=" . htmlspecialchars($empresa['cnpj']) . "' class='btn-acao btn-excluir' onclick='return confirm(\"Tem certeza que deseja excluir esta empresa?\");'>Excluir</a>";
+                echo "</td>";
                 echo "</tr>";
             }
             ?>

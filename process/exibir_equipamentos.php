@@ -65,6 +65,22 @@ try {
         .voltar a:hover {
             background-color: #0056b3;
         }
+        
+        .btn-acao {
+            padding: 5px 10px;
+            margin: 0 2px;
+            text-decoration: none;
+            border-radius: 3px;
+            color: white;
+        }
+
+        .btn-editar {
+            background-color: #ffc107;
+        }
+
+        .btn-excluir {
+            background-color: #dc3545;
+        }
     </style>
 </head>
 <body>
@@ -94,6 +110,7 @@ try {
                 <th>Notas</th>
                 <th>Patrimônio</th>
                 <th>CNPJ</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -120,11 +137,15 @@ try {
                         <td><?= htmlspecialchars($equip['notas']) ?></td>
                         <td><?= htmlspecialchars($equip['patrimonio']) ?></td>
                         <td><?= htmlspecialchars($equip['cnpj_empresa']) ?></td>
+                        <td>
+                            <a href="editarEquipamento.php?id=<?= htmlspecialchars($equip['equipamento_id']) ?>" class="btn-acao btn-editar">Editar</a>
+                            <a href="excluirEquipamento.php?id=<?= htmlspecialchars($equip['equipamento_id']) ?>" class="btn-acao btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este equipamento?');">Excluir</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>
-                    <td colspan="20">Nenhum equipamento cadastrado.</td>
+                    <td colspan="21">Nenhum equipamento cadastrado.</td>
                 </tr>
             <?php endif; ?>
         </tbody>

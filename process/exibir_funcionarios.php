@@ -65,6 +65,22 @@ try {
         .voltar a:hover {
             background-color: #0056b3;
         }
+        
+        .btn-acao {
+            padding: 5px 10px;
+            margin: 0 2px;
+            text-decoration: none;
+            border-radius: 3px;
+            color: white;
+        }
+
+        .btn-editar {
+            background-color: #ffc107;
+        }
+
+        .btn-excluir {
+            background-color: #dc3545;
+        }
     </style>
 </head>
 <body>
@@ -80,6 +96,7 @@ try {
                 <th>CPF</th>
                 <th>Telefone</th>
                 <th>Tipo de Usuário</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -92,11 +109,15 @@ try {
                         <td><?= htmlspecialchars($func['cpf']) ?></td>
                         <td><?= htmlspecialchars($func['telefone_celular']) ?></td>
                         <td><?= htmlspecialchars($func['tipo_usuario']) ?></td>
+                        <td>
+                            <a href="editarFuncionario.php?id=<?= htmlspecialchars($func['funcionario_id']) ?>" class="btn-acao btn-editar">Editar</a>
+                            <a href="excluirFuncionario.php?id=<?= htmlspecialchars($func['funcionario_id']) ?>" class="btn-acao btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este funcionário?');">Excluir</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>
-                    <td colspan="6">Nenhum funcionário cadastrado.</td>
+                    <td colspan="7">Nenhum funcionário cadastrado.</td>
                 </tr>
             <?php endif; ?>
         </tbody>
