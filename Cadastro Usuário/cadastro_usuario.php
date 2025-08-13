@@ -39,8 +39,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         <input type="tel" name="telefone" placeholder="Informe seu número de telefone"><br>
         <label for="">CPF:</label>
         <input type="text" name="cpf" id="" placeholder="Informe apenas os números do seu CPF"><br>
-        <label for="">NOME USUÁRIO:</label>
-        <input type="text" name="usuario" placeholder=""><br>
         <label for="">EMAIL:</label>
         <input type="email" name="email" placeholder="Informe o seu Email"><br>
         <label for="">CONFIRME O EMAIL:</label>

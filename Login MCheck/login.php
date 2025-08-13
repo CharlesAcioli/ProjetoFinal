@@ -25,17 +25,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
             <div class="Usuario">
                 <label for="">Usuário:</label>
-                <input type="text" name="usuario">
+                <input type="text" name="usuario" placeholder="Informe o usuário">
             </div>
 
             <div class="Senha">
                 <label for="">Senha:</label>
-                <input type="password" name="senha">
+                <input type="password" placeholder="Digite sua senha" name="senha">
             </div>
             <br>
 
             <div class="acoes">
-                <button type="submit" name="entrar" value="entrar">Entrar</button>
+                <button type="submit" name="entrar" value="entrar">Login</button>
                 <button type="submit" name="cadastrar" value="cadastrar">Cadastrar</button>
             </div>
         </form>
