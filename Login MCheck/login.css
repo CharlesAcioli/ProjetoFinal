@@ -52,11 +52,10 @@ input[type="password"] {
     border: 1px solid #0099ff;
     border-radius: 6px;
     font-size: 14px;
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 button {
-    width: 40%;
+    width: 45%;
     padding: 10px 20px;
     border: 1px solid #0099ff;
     border-radius: 6px;
@@ -87,8 +86,13 @@ button:hover {
         visibility: visible;
     }
 
+    input[type="text"],
+    input[type="password"]{
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
     button{
-        box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     

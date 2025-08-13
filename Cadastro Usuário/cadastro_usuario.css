@@ -87,7 +87,8 @@ button:hover {
 }
 
 footer{
-  height: 30px;
+  width: 100vw;
+  text-align: center;
 }
 
 @media screen and (max-width:768px) {

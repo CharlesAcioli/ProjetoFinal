@@ -1,7 +1,7 @@
 <?php 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST['sair']) && $_POST['sair'] === 'sair'){
-        header("Location:../index.php");
+        header("Location:../Login MCheck/login.php");
         exit();
     }
     
@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <header>
         <img src="logo.svg" alt="">
     </header>
-    <form action="" method="post">
+    <form action="cadastro_usuario.php" method="post">
         <h1>Cadastro Funcionário</h1><br><br>
         <label for="">NOME COMPLETO:</label>
         <input type="text" name="nome" placeholder="Informe seu nome completo"><br>

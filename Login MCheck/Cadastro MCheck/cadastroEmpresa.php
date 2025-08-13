@@ -10,19 +10,19 @@
 <body>
     <img src="logo.svg" alt="">
     <main>
-        <h1>REGISTRO</h1>
+        <h1>CADASTRO EMPRESA</h1>
         <form action="" method="post">
             <label for="CNPJ">CNPJ</label>
-            <input type="text" placeholder="xxx/0001-xx" name="" id=""><br>
+            <input type="text" placeholder="Informe o CNPJ da sua empresa" name="" id=""><br>
 
             <label for="Razao">Razão Social</label>
-            <input type="text"><br>
+            <input type="text" placeholder="Informe a razão social da sua empresa"><br>
 
             <label for="Fantasia">Nome Fantasia</label>
-            <input type="text"><br>
+            <input type="text" placeholder="Informe o nome fantasia da sua empresa"><br>
 
             <label for="Estadual">Inscriçao Estadual</label>
-            <input type="text"><br>
+            <input type="text" placeholder="Incrição estadual da sua empresa"><br>
 
             <label for="Segmento">Segmento</label><br>
             <select name="" id="">
@@ -38,23 +38,17 @@
                 <option value=""></option>
             </select><br><br>
 
-            <label for="Patrimonio">Patrimonio</label>
-            <input type="text" placeholder="Selecione uma opção" name="Patrimonio" id="Patrimonio"><br>
-
             <label for="Email">Email</label>
-            <input type="text" name="" id=""><br>
+            <input type="text" placeholder="Informe o email registrado na sua empresa" name="" id=""><br>
 
             <label for="Conf_email">Confirme seu Email</label>
-            <input type="text" name="" id=""><br>
-
-            <label for="Usuario">Usuário</label>
-            <input type="text" name="" id=""><br>
+            <input type="text" placeholder="Repita o email para confirmação" name="" id=""><br>
 
             <label for="Senha">Senha</label>
-            <input type="text" name="" id=""><br>
+            <input type="text" placeholder="Crie uma senha" name="" id=""><br>
 
             <label for="conf_senha">Confirme sua senha</label>
-            <input type="text" name="" id=""><br>
+            <input type="text" placeholder="Confirme a senha informada anteiormente" name="" id=""><br>
 
             <div class="botao">
                 <button type="button">Registrar</button>
