@@ -1,3 +1,17 @@
+<?php 
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if(isset($_POST['sair']) && $_POST['sair'] === 'sair'){
+        header("Location:../Login MCheck/login.php");
+        exit();
+    }
+    
+    if(isset($_POST['cadastrar']) && $_POST['cadastrar'] === 'cadastrar'){
+        header("Location:cadastrar_usuario.php");
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,52 +25,49 @@
     <header>
         <img src="logo.svg" alt="">
     </header>
-    <form action="" method="post">
+    <form action="cadastro_usuario.php" method="post">
         <h1>Cadastro Funcionário</h1><br><br>
-        <label for="">NOME COMPLETO</label>
+        <label for="">NOME COMPLETO:</label>
         <input type="text" name="nome" placeholder="Informe seu nome completo"><br>
-        <label for="">ENDEREÇO</label>
+        <label for="">ENDEREÇO:</label>
         <input type="text" name="endereco" placeholder="Informe seu endereço"><br>
-        <label for="">BAIRRO</label>
+        <label for="">BAIRRO:</label>
         <input type="text" name="bairro" placeholder="Informe o bairro que corresponde ao seu endereço"><br>
-        <label for="">CEP</label>
+        <label for="">CEP:</label>
         <input type="text" name="cep" placeholder="Informe o CEP referente a sua residência"><br>
-        <label for="">TELEFONE</label>
-        <input type="number" name="telefone" placeholder="Informe seu número de telefone"><br>
-        <label for="">CPF</label>
+        <label for="">TELEFONE:</label>
+        <input type="tel" name="telefone" placeholder="Informe seu número de telefone"><br>
+        <label for="">CPF:</label>
         <input type="text" name="cpf" id="" placeholder="Informe apenas os números do seu CPF"><br>
-        <label for="">NOME USUÁRIO</label>
-        <input type="text" name="usuario" placeholder=""><br>
-        <label for="">EMAIL</label>
+        <label for="">EMAIL:</label>
         <input type="email" name="email" placeholder="Informe o seu Email"><br>
-        <label for="">CONFIRME O EMAIL</label>
+        <label for="">CONFIRME O EMAIL:</label>
         <input type="email" name="confirme_email" placeholder="Confirme o email informado"><br>
-        <label for="">SENHA</label>
+        <label for="">SENHA:</label>
         <input type="password" name="senha" placeholder="Digite a sua senha"><br>
-        <label for="">CONFIRMAÇÃO DE SENHA</label>
+        <label for="">CONFIRMAÇÃO DE SENHA:</label>
         <input type="password" name="confirme_senha" placeholder="Confirme sua senha"><br>
-        <label for="">TIPO DE USUÁRIO</label>
+        <label for="">TIPO DE USUÁRIO:</label>
         <select name="tipo_usuario" id="">
             <option value="">Master</option>
             <option value="">Gerente</option>
             <option value="">Líder</option>
         </select><br>
-        <label for="">CARGO OCUPANTE</label>
+        <label for="">CARGO OCUPANTE:</label>
         <select name="cargo" id="">
             <option value="">Gerente</option>
             <option value="">Supervisor</option>
             <option value="">Demais Funções</option>
         </select><br>
-        <label for="setor">SETOR</label>
+        <label for="setor">SETOR:</label>
         <select name="" id="">
             <option value="">Gerencia</option>
             <option value="">RH</option>
             <option value="">Estoque</option>
         </select><br><br>
-        <button type="submit">Cadastar</button>
+        <button type="submit" name="cadastrar" value="cadastrar">Cadastar</button><br>
+        <button type="submit" name="sair" value="sair">Sair</button>
     </form>
     <footer>&copy;MCheck</footer>
 </body>
 </html>
-
-<!--  -->

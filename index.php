@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/Login MCheck/Cadastro MCheck/cadastroEmpresa.php">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
@@ -14,8 +15,8 @@
     <header>
         <img src="logo.svg" alt="" style="width: 100px;">
         <div>
-            <button onclick="">Login</button>
-            <button onclick="">Registre-se</button>
+            <button onclick="window.location.href='Login MCheck/login.php'">Login</button>
+            <button onclick="window.location.href='Login MCheck/Cadastro MCheck/cadastroEmpresa.php'">Registre-se</button>
         </div>
     </header>
 
