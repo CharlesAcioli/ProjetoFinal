@@ -28,7 +28,7 @@ form {
   background: #F8F8F8;
   padding: 50px 0;
   margin: 30px 0;
-  width: 50%;
+  width: 40%;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@ form {
 }
 
 label, input, select {
-  width: 80%;
+  width: 90%;
 }
 
 input, select{
@@ -50,7 +50,6 @@ input, select{
 button{
     width: 50%;
     height: 30px;
-    padding: 12px 24px;
     background: transparent;
     position: relative;
     display: inline-block;
