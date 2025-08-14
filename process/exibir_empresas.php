@@ -5,9 +5,6 @@ try {
     $stmt = $conn->prepare("SELECT * FROM empresas");
     $stmt->execute();
     $empresas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // Nota: O uso de $_SESSION['empresas_globais'] não é ideal
-    // para esta página, pois os dados já são buscados.
-    // Mantenha apenas a variável $empresas para a exibição.
 } catch (PDOException $e) {
     echo "Erro ao buscar os dados: " . $e->getMessage();
 }

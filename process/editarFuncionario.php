@@ -1,7 +1,6 @@
 <?php
 include_once('../php/config.php');
 
-// Se a requisição for POST, processa a atualização
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $id = $_POST['funcionario_id'];
@@ -37,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 } else if (isset($_GET['id'])) {
-    // Se a requisição for GET e houver um ID, busca os dados para exibir no formulário
     $id = $_GET['id'];
 
     try {
@@ -55,7 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 } else {
-    // Redireciona se não houver ID ou não for uma requisição POST
     header('Location: exibir_funcionarios.php');
     exit();
 }

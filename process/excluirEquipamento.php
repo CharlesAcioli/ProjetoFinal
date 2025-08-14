@@ -10,12 +10,10 @@ if (isset($_GET['id'])) {
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
 
-
         header('Location: exibir_equipamentos.php?status=success_delete');
         exit();
 
     } catch (PDOException $e) {
-
         header('Location: exibir_equipamentos.php?status=error_delete');
         exit();
     }

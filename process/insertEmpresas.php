@@ -23,10 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':senha', $hashed_senha);
         
         if ($stmt->execute()) {
-            // AQUI ESTÁ O AJUSTE: Remova o 'echo' e mantenha o 'header' e 'exit'.
-            // header() redireciona o navegador para a página `exibir_empresas.php`
             header("Location: exibir_empresas.php");
-            exit(); // Garante que o script pare de ser executado
+            exit();
         } else {
             echo "Erro ao registrar a empresa.";
         }

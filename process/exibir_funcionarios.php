@@ -2,7 +2,6 @@
 include_once('../php/config.php');
 
 try {
-    // Consulta para buscar todos os funcionários
     $stmt = $conn->query("SELECT * FROM funcionarios ORDER BY funcionario_id DESC");
     $funcionarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {

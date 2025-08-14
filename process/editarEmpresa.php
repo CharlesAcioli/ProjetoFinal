@@ -55,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 } else {
-    // Redireciona se não houver CNPJ ou não for uma requisição POST
     header('Location: exibir_empresas.php');
     exit();
 }
