@@ -29,14 +29,14 @@
                 <option value=""></option>
                 <option value=""></option>
                 <option value=""></option>
-            </select><br><br>
+            </select><br>
 
             <label for="Produtos">Produtos/Serviços Oferecidos</label><br>
             <select name="" id="">
                 <option value=""></option>
                 <option value=""></option>
                 <option value=""></option>
-            </select><br><br>
+            </select><br>
 
             <label for="Email">Email</label>
             <input type="text" placeholder="Informe o email registrado na sua empresa" name="" id=""><br>
