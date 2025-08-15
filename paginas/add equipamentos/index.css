@@ -11,85 +11,65 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-header h3 {
-    font-size: 1.2em;
+/* menu de navegação */
+
+nav header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 20vw;
+    height: 100vh;
+    word-break: break-all;
+    background-color: #7497FF;
+    position: fixed;
+    z-index: 100;
+}
+
+li {
+    display: flex;
 }
 
 header img {
-    width: 100px;
-}
-
-header {
-    height: 100vh;
-    width: 30vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #7497FF;
-    z-index: 100; 
-    overflow-y: auto;
-}
-
-.container {
-    margin: 0 auto;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.logo img {
-    width: 160px;
+    width: 80%;
     height: auto;
 }
 
-.equipamentos,
-.add,
-.defeito,
-.user,
-.ordem,
-.relat,
-.manu,
-.config {
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 15px;
+}
+
+li a {
     display: flex;
     align-items: center;
-    gap: 0.8em;
-    padding: 10px 15px;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
 }
 
-.equipamentos:hover,
-.add:hover,
-.defeito:hover,
-.user:hover,
-.ordem:hover,
-.relat:hover,
-.manu:hover,
-.config:hover {
-    background-color: #6085e6;
-}
-
-.equipamentos img,
-.add img,
-.defeito img,
-.user img,
-.ordem img,
-.relat img,
-.manu img,
-.config img {
+li img {
+    margin-right: 5px;
     width: 32px;
     height: 32px;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* main */
+
 
 main {
-    margin-left: 30vh;
+    margin-left: 23vw;
     width: 100%;
     padding: 20px;
 }
@@ -218,7 +198,7 @@ textarea {
 }
 
 .submit-button {
-    background-color: #304F6E;
+    background-color: #5A6F84;
     color: #ffffff;
     padding: 12px 24px;
     border: none;
@@ -235,4 +215,8 @@ textarea {
     width: 20px;
     height: 20px;
     filter: invert(1);
+}
+
+button:hover {
+    background-color: #304F6E;
 }
