@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,121 +7,71 @@
     <title>Relatórios</title>
 </head>
 <body>
-<header>
+    <nav>
+        <header>
+            <img src="../img/principal_logo-removebg-preview.png" alt="">
+        </header>
 
-        <div class="logo">
-          <img
-            src="../img/principal_logo-removebg-preview.png"
-            alt="Logo Principal"
-          />
+        <ul>
+            <li><img src="../img/manutencao.png" alt=""><a href="">Equipamentos</a></li>
+            <li><img src="../img/botao-adicionar.png" alt=""><a href="">Add Equipamentos</a></li>
+            <li><img src="../img/perturbacao.png" alt=""><a href="">Equip. c/ Defeito</a></li>
+            <li><img src="../img/usuario-masculino.png" alt=""><a href="">Usuários</a></li>
+            <li><img src="../img/servico-de-gestao.png" alt=""><a href="">Ordens de Serviços</a></li>
+            <li><img src="../img/informacao-financeira.png" alt=""><a href="">Relatórios</a></li>
+            <li><img src="../img/homem.png" alt=""><a href="">Manutenção</a></li>
+            <li><img src="../img/botao-de-roda-dentada-de-configuracoes.png" alt=""><a href="">Configurações</a></li>
+        </ul>
+    </nav>
+    <main>
+      <form action="" method="post">
+        <h1>Painel</h1>
+        <hr>
+
+        <div class="dois">
+          <h2>Inventário de esquipamentos danificados</h2>
+
+          <button type="submit"><img src="../img/Adicionar.png" width="25" height="25" alt="">Adicionar Novo Equipamento</button>
         </div>
-
-        <div class="equipamentos">
-          <img src="../img/manutencao.png" alt="Ícone Equipamentos" />
-          <h3>Equipamentos</h3>
-        </div>
-
-        <div class="add">
-          <img src="../img/botao-adicionar.png" alt="Ícone Adicionar" />
-          <h3>Add Equipamentos</h3>
-        </div>
-
-        <div class="defeito">
-          <img src="../img/perturbacao.png" alt="Ícone Defeito" />
-          <h3>Equip.c/ Defeito</h3>
-        </div>
-
-        <div class="user">
-          <img src="../img/usuario-masculino.png" alt="Ícone Usuários" />
-          <h3>Usuários</h3>
-        </div>
-
-        <div class="ordem">
-          <img
-            src="../img/servico-de-gestao.png"
-            alt="Ícone Ordem de Serviço"
-          />
-          <h3>Ordens De Serviço</h3>
-        </div>
-
-        <div class="relat">
-          <img src="../img/informacao-financeira.png" alt="Ícone Relatórios" />
-          <h3>Relatórios</h3>
-        </div>
-
-        <div class="manu">
-          <img src="../img/homem.png" alt="Ícone Manutenção" />
-          <h3>Manutenção</h3>
-        </div>
-
-        <div class="config">
-          <img
-            src="../img/botao-de-roda-dentada-de-configuracoes.png"
-            alt="Ícone Configurações"
-          />
-          <h3>Configurações</h3>
-        </div>
-    </header>
-<main>
-
-  
-      <form action="" method="POST">
-        <div class="painel">
-          <h2>Painel</h2>
-        </div>
-
-        <hr /><br>
 
         <div class="container">
-          
-        </div>
-        <div class="inventario">
-            <h2>Inventário de equipamentos em manuntenção</h2>
-            <div class="butao">
-            <button type="button">Adicionar novo equipamento</button>
-            </div>
-            
-        </div>
+          <div class="filter">
+            <label for="Pesquisa">Filtros de pesquisa</label>
+            <input type="text" name="" id="">
 
-        <div class="conte">
+            <label for="Status">Status</label>
+            <select name="" id="">
+              <option value="">Precisa De Reparo</option>
+              <option value="">Em Manutenção</option>
+              <option value="">Operacional</option>
+            </select>
 
-            <div class="fill">
-    <h3>Filtros de pesquisa</h1>
-    <input type="text" placeholder="     Pesquise por nome, ID, localização" name="" id="">
-    </div>
-
-    <div class="Status">
-    <h3>Status</h3>
-    <label for=""></label>
-    <select name="" id="">
-        <option value="">Selecione</option>
-        <option value="">Precisa de reparo</option>
-        <option value="">Operacional</option>
-        <option value="">Em manuntenção</option>
-    </select>
-    </div>
-
-    <div class="Tipo">
-    <h3>Tipo</h3>
-    <label for=""></label>
-    <select name="" id="">
-        <option value="">Selecione</option>
-        <option value="">Compressor</option>
-        <option value="">Gerador</option>
-        <option value="">Bombear</option>
-        <option value="">Motor</option>
-        <option value="">Unidade HVAC</option>
-    </select>
-    </div>
-
-  </ul>
+            <label for="Setor">Setor</label>
+            <select name="" id="">
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
 
 
-
+          </div>
 
         </div>
+
+
       </form>
+
+
     </main>
-    
 </body>
 </html>
