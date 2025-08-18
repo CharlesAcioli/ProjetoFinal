@@ -42,7 +42,7 @@ button:nth-child(2){
 
 button:hover{
     box-shadow: 0 4px 5px gray;
-}
+} 
 
 nav{
     /* background: orange; */
