@@ -12,7 +12,7 @@ main{
 
 nav{
     background: #0F9FE8;
-    width: 11vw;
+    width: 25vw;
     text-align: center;
 }
 
@@ -31,7 +31,7 @@ ul{
 }
 
 li{
-    margin: 15px 5px;
+    margin: 15px 0 5px 15px;
     background: #0F9FE8;
 }
 
@@ -94,7 +94,7 @@ header button{
 
 .card{
     background-color: #0F9FE8;
-    width: 50%;
+    width: 90%;
     margin: 50px;
     display: flex;
     border: 1px solid #000;
@@ -119,6 +119,42 @@ dd{
     height: 30px;
 }
 
-form section{
-    background: #0F9FE8;
+.s-table{
+    /* background: #0F9FE8; */
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.table{
+    width: 90%;
+    margin: 15px 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    border-collapse: separate;
+}
+
+th, td{
+    padding: 8px 12px;
+    border: 1px solid #000;
+    /* border-radius: 5px; */
+    text-align: center;
+}
+
+thead {
+    background: #e0e0e0;
+}
+
+tbody tr:nth-child(even){
+    background: #f9f9f9;
+}
+
+td button{
+    border: none;
+    width: 35px;
+    /* background: none; */
+}
+
+td button:hover{
+    cursor: pointer;
 }
