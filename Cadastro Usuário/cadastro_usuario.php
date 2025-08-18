@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <header>
         <img src="logo.svg" alt="">
     </header>
-    <form action="cadastro_usuario.php" method="post">
+    <form action="../process/insertFuncionario.php" method="post">
         <h1>Cadastro Funcionário</h1><br><br>
         <label for="">NOME COMPLETO:</label>
         <input type="text" name="nome" placeholder="Informe seu nome completo"><br>
@@ -44,27 +44,27 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         <label for="">CONFIRME O EMAIL:</label>
         <input type="email" name="confirme_email" placeholder="Confirme o email informado"><br>
         <label for="">SENHA:</label>
-        <input type="password" name="senha" placeholder="Digite a sua senha"><br>
+        <input type="password" name="senha_hash" placeholder="Digite a sua senha"><br>
         <label for="">CONFIRMAÇÃO DE SENHA:</label>
         <input type="password" name="confirme_senha" placeholder="Confirme sua senha"><br>
         <label for="">TIPO DE USUÁRIO:</label>
         <select name="tipo_usuario" id="">
-            <option value="">Master</option>
-            <option value="">Gerente</option>
-            <option value="">Líder</option>
+            <option value="Master">Master</option>
+            <option value="Líder">Líder</option>
+            <option value="Comum">Comum</option>
         </select><br>
         <label for="">CARGO OCUPANTE:</label>
         <select name="cargo" id="">
-            <option value="">Gerente</option>
-            <option value="">Supervisor</option>
-            <option value="">Demais Funções</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Diretor">Diretor</option>
+            <option value="Gerente">Gerente</option>
+            <option value="Supervisor">Supervisor</option>
+            <option value="Funcionario">Funcionario</option>
+            <option value="Tecnico">Tecnico</option>
         </select><br>
         <label for="setor">SETOR:</label>
-        <select name="" id="">
-            <option value="">Gerencia</option>
-            <option value="">RH</option>
-            <option value="">Estoque</option>
-        </select><br><br>
+        <input type="text" name="setor" placeholder="Confirme seu setor"><br>
+        <br><br>
         <button type="submit" name="cadastrar" value="cadastrar">Cadastar</button><br>
         <button type="submit" name="sair" value="sair">Sair</button>
     </form>

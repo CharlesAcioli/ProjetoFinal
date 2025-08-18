@@ -20,16 +20,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <body>
     <img src="logo.svg" alt="">
     <main>
-        <form action="" method="POST">
+        <form action="../process/processar_login.php" method="post">
             <h1>LOGIN</h1>
 
             <div class="Usuario">
-                <label for="">Usuário:</label>
+                <label for="usuario">Usuário:</label>
                 <input type="text" name="usuario" placeholder="Informe o usuário">
             </div>
 
             <div class="Senha">
-                <label for="">Senha:</label>
+                <label for="senha">Senha:</label>
                 <input type="password" placeholder="Digite sua senha" name="senha">
             </div>
             <br>
