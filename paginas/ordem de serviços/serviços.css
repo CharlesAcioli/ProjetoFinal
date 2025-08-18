@@ -12,14 +12,14 @@ body {
 
 
 .menu {
-    width: 35vh;
+    width: 30vh;
     height: 100vh;
     background-color: #7497FF;
-    /* background-size: cover; */
+    background-size: cover;
 }
 
 hr {
-    /* width: 100%; */
+    width: 100%;
 }
 
 .logo {
@@ -37,18 +37,8 @@ hr {
 .manu,
 .config {
     display: flex;
-    gap: 0.7em;
+    gap: 0.4em;
     margin: 10px;
-}
-
-.equipamentos img,
-.add img,
-.defeito img,
-.user img,
-.relat img,
-.manu img,
-.config img {
-    width: 10%;
 }
 
 .config, h3 {
@@ -68,10 +58,10 @@ main {
 }
 
 .conte {
-    width: 70%;
+    max-width: 70%;
+    width: 80%;
     padding: 10px;
     background-color: #F8F8F8;
-    border-radius: 10px;
     box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.3);
     position: relative;
     left: 15%;
@@ -79,7 +69,7 @@ main {
 
 .conte h3 {
     color: #304F6E;
-    margin-bottom: 30px;
+    margin: 15px;
 }
 
 
@@ -90,7 +80,6 @@ main {
 }
 
 .form-group {
-  width: 100%;
   display: flex; 
   flex-direction: column; 
   
@@ -111,7 +100,7 @@ main {
   color: #5d6d84; 
   background-color: #eef2f7; 
   outline: none; 
-  width: 100%;
+  width: 500px; 
   box-sizing: border-box; 
 }
 
@@ -121,6 +110,6 @@ main {
 }
 
 
-@media screen and (width: 768px) {
-    
-}
+
+
+

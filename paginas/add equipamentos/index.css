@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; 
 }
 
 body {
@@ -10,73 +11,212 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+/* menu de navegação */
 
-.menu {
-    width: 30vh;
-    height: 100vh;
-    background-color: #7497FF;
-    background-size: cover;
-}
-
-hr {
-    width: 100%;
-}
-
-.logo {
+nav header{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-.equipamentos,
-.add,
-.defeito,
-.user,
-.ordem,
-.relat,
-.manu,
-.config {
+nav {
+    width: 20vw;
+    height: 100vh;
+    word-break: break-all;
+    background-color: #7497FF;
+    position: fixed;
+    z-index: 100;
+}
+
+li {
     display: flex;
-    gap: 0.4em;
-    margin: 10px;
 }
 
-.config, h3 {
-    position: relative;
-    top: 0.2em;
-    color: white;
-    font-weight: bold;
-}
-
-main {
-    width: 100%;
-}
-
-
-.painel {
-    margin: 10px;
-}
-
-.conte {
-    max-width: 70%;
+header img {
     width: 80%;
-    padding: 10px;
-    background-color: #F8F8F8;
-    box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.3);
-    position: relative;
-    left: 15%;
+    height: auto;
 }
 
-.conte h3 {
-    color: #304F6E;
+ul {
+    list-style-type: none;
+}
+
+li {
     margin: 15px;
 }
 
-.add-equip label {
-    display: block;
+li a {
+    display: flex;
+    align-items: center;
 }
 
-.grupo-form {
-    
+li img {
+    margin-right: 5px;
+    width: 32px;
+    height: 32px;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* main */
+
+
+main {
+    margin-left: 23vw;
+    width: 100%;
+    padding: 20px;
+}
+
+.painel {
+    margin: 10px;
+    color: #304F6E;
+}
+
+.container {
+    max-width: 1200px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    margin-top: 1.5em;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+.card-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 500;
+    color: #304F6E;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    color: #304F6E;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.card-secondary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card-section {
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-section-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #304F6E;
+    margin-bottom: 16px;
+}
+
+.date-input {
+    position: relative;
+}
+
+.date-input input {
+    padding-right: 40px;
+}
+
+.date-input .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    cursor: pointer;
+}
+
+.textarea-group {
+    margin-bottom: 16px;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.submit-button {
+    background-color: #5A6F84;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.submit-button img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+button:hover {
+    background-color: #304F6E;
+}
