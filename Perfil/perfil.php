@@ -1,3 +1,7 @@
+<?php 
+include_once('../php/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,14 +16,38 @@
         <nav>
             <img src="../Cadastro Usuário/logo.svg" alt="">
             <ul>
-                <li><i class="fa-solid fa-screwdriver-wrench"></i><a href="">Equipamentos</a></li>
-                <li><i class="fas fa-plus-circle"></i><a href="">Adicionar Equipamentos</a></li>
-                <li><i class="fas fa-exclamation-triangle"></i><a href="">Equip. c/Defeito</a></li>
-                <li><i class="fa-solid fa-user-group"></i><a href="">Usuários</a></li>
-                <li><i class="fas fa-clipboard-list"></i><a href="">Ordens de serviço</a></li>
-                <li><i class="fas fa-chart-column"></i><a href="">Relatórios</a></li>
-                <li><i class="fa-solid fa-wrench"></i><a href="">Manutenção</a></li>
-                <li><i class="fa-solid fa-gear"></i><a href="">Configurações</a></li>
+                <li>
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <a href="">Equipamentos</a>
+                </li>
+                <li>
+                    <i class="fas fa-plus-circle"></i>
+                    <a href="">Adicionar Equipamentos</a>
+                </li>
+                <li>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <a href="">Equip. c/Defeito</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-user-group"></i>
+                    <a href="">Usuários</a>
+                </li>
+                <li>
+                    <i class="fas fa-clipboard-list"></i>
+                    <a href="">Ordens de serviço</a>
+                </li>
+                <li>
+                    <i class="fas fa-chart-column"></i>
+                    <a href="">Relatórios</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-wrench"></i>
+                    <a href="">Manutenção</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-gear"></i>
+                    <a href="">Configurações</a>
+                </li>
             </ul>
         </nav>
 
@@ -39,16 +67,16 @@
 
                     <dl>
                         <dt>Nome</dt>
-                        <dd>eu</dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['username']); ?></h2></dd>
 
                         <dt>Email</dt>
-                        <dd></dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['email']); ?></h2></dd>
 
                         <dt>Telefone</dt>
-                        <dd></dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['telefone']); ?></h2></dd></dd>
 
                         <dt>CPF</dt>
-                        <dd></dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['cpf']); ?></h2></dd></dd>
                     </dl>
                 </section>
             </article>
