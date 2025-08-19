@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../../Cadastro Usuário/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="cadastro.css">
     <title>Cadastro de Empresa</title>
 </head>
 <body>
-    <img src="logo.svg" alt="">
+    <img src="../../Cadastro Usuário/logo.svg" alt="">
     <main>
         <h1>CADASTRO EMPRESA</h1>
         <form action="../../process/insertEmpresas.php" method="post">
