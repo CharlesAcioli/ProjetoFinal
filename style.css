@@ -119,6 +119,7 @@ figcaption{
 footer{
     background: #0F9FE8;
     color: #fff;
+    height: 35vh;
     display: flex;
     justify-content: space-around;
 }
