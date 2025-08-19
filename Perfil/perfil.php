@@ -1,3 +1,7 @@
+<?php 
+include_once('../php/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -78,16 +82,16 @@
 
                     <dl>
                         <dt>Nome</dt>
-                        <dd>eu</dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['username']); ?></h2></dd>
 
                         <dt>Email</dt>
-                        <dd></dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['email']); ?></h2></dd>
 
                         <dt>Telefone</dt>
-                        <dd></dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['telefone']); ?></h2></dd></dd>
 
                         <dt>CPF</dt>
-                        <dd></dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['cpf']); ?></h2></dd></dd>
                     </dl>
                 </section>
             </article>
