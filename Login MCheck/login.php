@@ -1,7 +1,7 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST['entrar']) && $_POST['entrar'] === 'entrar'){
-        header("Location:../Relatórios/relatorios.html");
+        header("Location:../Relatórios/relatorios.php");
     }else if(isset($_POST['cadastrar']) && $_POST['cadastrar'] === 'cadastrar'){
         header("Location:../Cadastro Usuário/cadastro_usuario.php");
     }
@@ -13,14 +13,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Cadastro Usuário/cadastro_usuario.php">
     <link rel="stylesheet" href="login.css">
     <title>Pagina de Login</title>
 </head>
 <body>
     <img src="logo.svg" alt="">
     <main>
-        <form action="../process/processar_login.php" method="post">
+        <form action="../Login MCheck/login.php" method="post">
             <h1>LOGIN</h1>
 
             <div class="Usuario">
