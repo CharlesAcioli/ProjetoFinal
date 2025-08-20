@@ -31,8 +31,8 @@ ul{
 }
 
 li{
+    width: auto;
     margin: 15px 0 5px 15px;
-    background: #0F9FE8;
 }
 
 li > img{
@@ -79,7 +79,7 @@ header h3{
 }
 
 header img{
-    background: orange;
+    background: #fff;
     width: 50%;
     align-self: center;
     border-radius: 50%;
@@ -95,6 +95,10 @@ header button{
     border-radius: 5px;
     font-size: larger;
     font-weight: bold;
+}
+
+header button:hover{
+    cursor: pointer;
 }
 
 .card{
@@ -196,17 +200,22 @@ button i.fa-trash-can:hover{
     }
 
     nav {
+        background-color: #fff;
         width: 100vw;
-        /* height: 100vh; */
-        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    nav > img{
-        height: 10%;
+    .nav{
+        width: 30vw;
+        margin-bottom: 0;
     }
 
     nav ul {
-        height: 80%;
+        width: 75%;
+        height: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -214,16 +223,17 @@ button i.fa-trash-can:hover{
     }
 
     nav li {
-        margin: 0 5px;
-        width: 40%;
-        height: auto;
+        width: auto auto;
+        height: 6.8rem;
+        margin: 15px 10px;
         border-radius: 13px;
     }
 
     nav ul img {
-        background: orange;
         width: 100%;
+        height: 100%;
         display: flex;
+        border-radius: 13px;
     }
 
     nav ul a,
@@ -233,6 +243,7 @@ button i.fa-trash-can:hover{
 
     form {
         width: 100%;
+        height: 100%;
     }
 
     .card {

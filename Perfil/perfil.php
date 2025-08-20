@@ -53,7 +53,7 @@ if (isset($_SESSION['setor'])) {
 <body>
     <main>
         <nav>
-            <img src="../logo.svg" alt="">
+            <img class="nav" src="../logo.svg" alt="">
             <ul>
                 <li>
                     <img src="img/equipamentos.svg" alt="">
@@ -98,7 +98,7 @@ if (isset($_SESSION['setor'])) {
                 </li>
 
                 <li>
-                    <img src="img/config.svg" alt="">
+                    <img src="img/configurações.svg" alt="">
                     <i class="fa-solid fa-gear"></i>
                     <a href="">Configurações</a>
                 </li>
