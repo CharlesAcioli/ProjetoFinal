@@ -37,12 +37,12 @@
             <div class="card-header">Adicionar Novo Equipamento</div>
             <div class="form-grid">
                 <div class="form-group">
-                    <label for="nome">Nome do Equipamento</label>
-                    <input type="text" id="nome" placeholder="Ex: Bomba Centrífuga">
+                    <label for="nome_equipamento">Nome do Equipamento</label>
+                    <input type="text" id="nome_equipamento" placeholder="Ex: Bomba Centrífuga">
                 </div>
                 <div class="form-group">
-                    <label for="tipo">Tipo do equipamento</label>
-                    <input type="text" name="Tip. equip" placeholder="Tipo De Equipamento" id="">
+                    <label for="tipo_equipamento">Tipo do equipamento</label>
+                    <input type="text" name="tipo_equipamento" placeholder="Tipo De Equipamento" id="">
                 </div>
                 <div class="form-group">
                     <label for="status">Status</label>
@@ -54,19 +54,19 @@
                 </div>
                 <div class="form-group">
                     <label for="localizacao">Localização</label>
-                    <input type="text" id="localizacao" placeholder="Ex: Setor 01, Baia A">
+                    <input type="text" id="localizacao" placeholder="Ex: Setor 01, Baia A" required>
                 </div>
                 <div class="form-group">
-                    <label for="fabricacao">Fabricação</label>
-                    <input type="text" id="fabricacao" placeholder="Ex: FlowServer">
+                    <label for="fabricante">Fabricação</label>
+                    <input type="text" id="fabricante" placeholder="Ex: FlowServer">
                 </div>
                 <div class="form-group">
-                    <label for="modelo">Número do modelo</label>
-                    <input type="text" id="modelo" placeholder="Ex: CS-5000">
+                    <label for="numero_modelo">Número do modelo</label>
+                    <input type="text" id="numero_modelo" placeholder="Ex: CS-5000">
                 </div>
                 <div class="form-group">
-                    <label for="serie">Número de série</label>
-                    <input type="text" id="serie" placeholder="Ex: FSN-98765">
+                    <label for="numero_serie">Número de série</label>
+                    <input type="text" id="numero_serie" placeholder="Ex: FSN-98765">
                 </div>
                 <div class="form-group">
                     <label for="criticidade">Criticidade</label>
@@ -78,11 +78,22 @@
                 </div>
                 <div class="form-group">
                     <label for="departamento">Departamento</label>
-                    <input type="text" id="departamento" placeholder="Ex: Sistema de Refrigeração">
+                    <input type="text" id="departamento" placeholder="Ex: Sistema de Refrigeração" required>
                 </div>
+
                 <div class="form-group form-group-full">
-                    <label for="atribuido">Atribuído a:</label>
-                    <select name="atribuido" id="atribuido" required>
+                    <label for="cnpj_empresa">Cnpj Da Empresa</label>
+                    <input type="number" name="cnpj_empresa" placeholder="Ex: xx.xxx.xxx/xxxx-xx " id="cnpj_empresa" required>
+                </div>
+
+                <div class="form-group form-group-full">
+                    <label for="patrimonio">Patrimonio</label>
+                    <input type="number" placeholder="Ex: R$ 500.000" name="patrimonio" id="patrimonio" required>
+                </div>
+
+                <div class="form-group form-group-full">
+                    <label for="atribuido_a">Atribuído a:</label>
+                    <select name="atribuido_a" id="atribuido_a" required>
                         <option value="Tecnologia da Informação (TI)">Tecnologia da Informação (TI)</option>
                         <option value="Saúde e Bem-Estar">Saúde e Bem-Estar</option>
                         <option value="Serviços Financeiros">Serviços Financeiros</option>
@@ -115,25 +126,25 @@
                 <div class="form-group">
                     <label for="data_instalacao">Data de Instalação</label>
                     <div class="date-input">
-                        <input type="date" id="data_instalacao" placeholder="Escolha a data">
+                        <input type="date" id="data_instalacao" placeholder="Escolha a data" required>
                         <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="data_compra">Data da Compra</label>
                     <div class="date-input">
-                        <input type="date" id="data_compra" placeholder="Escolha a data">
+                        <input type="date" id="data_compra" placeholder="Escolha a data" required>
                         <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="custo_compra">Custo de Compra</label>
-                    <input type="text" id="custo_compra" placeholder="Ex: 1500">
+                    <input type="text" id="custo_compra" placeholder="Ex: 1500" required>
                 </div>
                 <div class="form-group">
-                    <label for="garantia">Data de Término da Garantia</label>
+                    <label for="data_termino_garantia">Data de Término da Garantia</label>
                     <div class="date-input">
-                        <input type="date" id="garantia" placeholder="Escolha a data">
+                        <input type="date" id="data_termino_garantia" placeholder="Escolha a data">
                         <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario">
                     </div>
                 </div>
@@ -150,8 +161,8 @@
                     <textarea id="dados_uso" placeholder="Por exemplo, Total de horas de operação"></textarea>
                 </div>
                 <div class="textarea-group">
-                    <label for="nota">Nota</label>
-                    <textarea id="nota" placeholder="Qualquer notas adicionais sobre o equipamento"></textarea>
+                    <label for="notas">Nota</label>
+                    <textarea id="notas" placeholder="Qualquer notas adicionais sobre o equipamento"></textarea>
                 </div>
             </div>
         </div>

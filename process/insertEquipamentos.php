@@ -42,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':notas', $notas);
         $stmt->bindParam(':patrimonio', $patrimonio);
         $stmt->bindParam(':cnpj_empresa', $cnpj_empresa);
-
         if ($stmt->execute()) {
             header("Location: exibir_equipamentos.php");
         } else {
