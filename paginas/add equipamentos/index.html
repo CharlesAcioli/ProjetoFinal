@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,63 +32,63 @@
       <hr />
 
       <div class="container"> 
-        <form action="" method="post">
+        <form action="../../process/insertEquipamentos.php" method="post">
           <div class="card">
             <div class="card-header">Adicionar Novo Equipamento</div>
             <div class="form-grid">
               <div class="form-group">
                 <label for="nome_equipamento">Nome do Equipamento</label>
-                <input type="text" id="nome_equipamento" placeholder="Ex: Bomba Centrífuga" />
+                <input type="text" name="nome_equipamento" id="nome_equipamento" placeholder="Ex: Bomba Centrífuga">
               </div>
               <div class="form-group">
                 <label for="tipo_equipamento">Tipo do equipamento</label>
-                <input type="text" name="tipo_equipamento" placeholder="Tipo De Equipamento" id="" />
+                <input type="text" name="tipo_equipamento" placeholder="Tipo De Equipamento" id="tipo_equipamento" required>
               </div>
               <div class="form-group">
                 <label for="status">Status</label>
-                <select id="status">
-                  <option value="">Em Manutenção</option>
-                  <option value="">Precisa De Reparo</option>
-                  <option value="">Operacional</option>
+                <select id="status" name="status" required>
+                  <option value="Em Manutenção">Em Manutenção</option>
+                  <option value="Precisa De Reparo">Precisa De Reparo</option>
+                  <option value="Operacional">Operacional</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="localizacao">Localização</label>
-                <input type="text" id="localizacao" placeholder="Ex: Setor 01, Baia A" required />
+                <input type="text" name="localizacao" id="localizacao" placeholder="Ex: Setor 01, Baia A" required>
               </div>
               <div class="form-group">
                 <label for="fabricante">Fabricação</label>
-                <input type="text" id="fabricante" placeholder="Ex: FlowServer" />
+                <input type="text" name="fabricante" id="fabricante" placeholder="Ex: FlowServer">
               </div>
               <div class="form-group">
                 <label for="numero_modelo">Número do modelo</label>
-                <input type="text" id="numero_modelo" placeholder="Ex: CS-5000" />
+                <input type="text" name="numero_modelo" id="numero_modelo" placeholder="Ex: CS-5000">
               </div>
               <div class="form-group">
                 <label for="numero_serie">Número de série</label>
-                <input type="text" id="numero_serie" placeholder="Ex: FSN-98765" />
+                <input type="text" name="numero_serie" id="numero_serie" placeholder="Ex: FSN-98765">
               </div>
               <div class="form-group">
                 <label for="criticidade">Criticidade</label>
-                <select id="criticidade">
-                  <option value="">Alto</option>
-                  <option value="">Médio</option>
-                  <option value="">Baixo</option>
+                <select id="criticidade" name="criticidade" required>
+                  <option value="alta">Alto</option>
+                  <option value="media">Médio</option>
+                  <option value="baixa">Baixo</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="departamento">Departamento</label>
-                <input type="text" id="departamento" placeholder="Ex: Sistema de Refrigeração" required />
+                <input type="text" name="departamento" id="departamento" placeholder="Ex: Sistema de Refrigeração" required>
               </div>
 
               <div class="form-group form-group-full">
                 <label for="cnpj_empresa">Cnpj Da Empresa</label>
-                <input type="number" name="cnpj_empresa" placeholder="Ex: xx.xxx.xxx/xxxx-xx " id="cnpj_empresa" required />
+                <input type="text" name="cnpj_empresa" placeholder="Ex: xx.xxx.xxx/xxxx-xx " id="cnpj_empresa" required>
               </div>
 
               <div class="form-group form-group-full">
                 <label for="patrimonio">Patrimonio</label>
-                <input type="number" placeholder="Ex: R$ 500.000" name="patrimonio" id="patrimonio" required />
+                <input type="number" name="patrimonio" id="patrimonio" required>
               </div>
 
               <div class="form-group form-group-full">
@@ -125,26 +125,26 @@
               <div class="form-group">
                 <label for="data_instalacao">Data de Instalação</label>
                 <div class="date-input">
-                  <input type="date" id="data_instalacao" placeholder="Escolha a data" required />
-                  <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario" />
+                  <input type="date" name="data_instalacao" id="data_instalacao" placeholder="Escolha a data" required>
+                  <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario">
                 </div>
               </div>
               <div class="form-group">
                 <label for="data_compra">Data da Compra</label>
                 <div class="date-input">
-                  <input type="date" id="data_compra" placeholder="Escolha a data" required />
-                  <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario" />
+                  <input type="date" name="data_compra" id="data_compra" placeholder="Escolha a data" required>
+                  <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario">
                 </div>
               </div>
               <div class="form-group">
                 <label for="custo_compra">Custo de Compra</label>
-                <input type="text" id="custo_compra" placeholder="Ex: 1500" required />
+                <input type="text" name="custo_compra" id="custo_compra" placeholder="Ex: 1500" required>
               </div>
               <div class="form-group">
                 <label for="data_termino_garantia">Data de Término da Garantia</label>
                 <div class="date-input">
-                  <input type="date" id="data_termino_garantia" placeholder="Escolha a data" />
-                  <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario" />
+                  <input type="date" name="data_termino_garantia" id="data_termino_garantia" placeholder="Escolha a data">
+                  <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario">
                 </div>
               </div>
             </div>
@@ -153,21 +153,21 @@
               <div class="card-section-header">Detalhes e Notas</div>
               <div class="textarea-group">
                 <label for="especificacoes">Especificações</label>
-                <textarea id="especificacoes" placeholder="Por exemplo, Capacidade: 500GPM, Altura: 20 Metros, Motor: 50 HP"></textarea>
+                <textarea id="especificacoes" name="especificacoes" placeholder="Por exemplo, Capacidade: 500GPM, Altura: 20 Metros, Motor: 50 HP"></textarea>
               </div>
               <div class="textarea-group">
                 <label for="dados_uso">Dados de Uso</label>
-                <textarea id="dados_uso" placeholder="Por exemplo, Total de horas de operação"></textarea>
+                <textarea id="dados_uso" name="dados_uso" placeholder="Por exemplo, Total de horas de operação"></textarea>
               </div>
               <div class="textarea-group">
                 <label for="notas">Nota</label>
-                <textarea id="notas" placeholder="Qualquer notas adicionais sobre o equipamento"></textarea>
+                <textarea id="notas" name="notas" placeholder="Qualquer notas adicionais sobre o equipamento"></textarea>
               </div>
             </div>
           </div>
 
           <div class="button-container">
-            <button class="submit-button">
+            <button type="submit" class="submit-button">
               <img src="https://img.icons8.com/material-rounded/24/ffffff/save.png" alt="Salvar" />
               Item/Equipamento Solicitado
             </button>

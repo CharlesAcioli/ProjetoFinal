@@ -1,6 +1,6 @@
 <?php
 include_once('../php/config.php');
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome_equipamento = $_POST['nome_equipamento'];
     $tipo_equipamento = $_POST['tipo_equipamento'];
     $status = $_POST['status'];
@@ -20,6 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $notas = $_POST['notas'];
     $patrimonio = $_POST['patrimonio'];
     $cnpj_empresa = $_POST['cnpj_empresa'];
+
+    var_dump($_POST); // Debugging line to check the posted data
 
     try {
         $stmt = $conn->prepare("INSERT INTO equipamentos (nome_equipamento, tipo_equipamento, status, localizacao, fabricante, numero_modelo, numero_serie, criticidade, departamento, atribuido_a, data_instalacao, data_compra, custo_compra, data_termino_garantia, especificacoes, dados_uso, notas, patrimonio, cnpj_empresa) VALUES (:nome_equipamento, :tipo_equipamento, :status, :localizacao, :fabricante, :numero_modelo, :numero_serie, :criticidade, :departamento, :atribuido_a, :data_instalacao, :data_compra, :custo_compra, :data_termino_garantia, :especificacoes, :dados_uso, :notas, :patrimonio, :cnpj_empresa)");
