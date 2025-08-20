@@ -135,5 +135,5 @@ button img {
 .filtro input:focus {
     outline: none;
     border-color: #007B77;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
 }
