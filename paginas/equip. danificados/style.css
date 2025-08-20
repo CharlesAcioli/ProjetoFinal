@@ -98,7 +98,8 @@ button img {
 
 .cont {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 30px;
@@ -109,6 +110,7 @@ button img {
 .filtro, .selec {
     position: relative;
     width: 300px;
+    flex: 1;
 }
 
 .filtro .icon, .selec .icon {
