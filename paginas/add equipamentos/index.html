@@ -54,7 +54,7 @@
                 </div>
                 <div class="form-group">
                     <label for="localizacao">Localização</label>
-                    <input type="text" id="localizacao" placeholder="Ex: Setor 01, Baia A">
+                    <input type="text" id="localizacao" placeholder="Ex: Setor 01, Baia A" required>
                 </div>
                 <div class="form-group">
                     <label for="fabricante">Fabricação</label>
@@ -78,8 +78,19 @@
                 </div>
                 <div class="form-group">
                     <label for="departamento">Departamento</label>
-                    <input type="text" id="departamento" placeholder="Ex: Sistema de Refrigeração">
+                    <input type="text" id="departamento" placeholder="Ex: Sistema de Refrigeração" required>
                 </div>
+
+                <div class="form-group form-group-full">
+                    <label for="cnpj_empresa">Cnpj Da Empresa</label>
+                    <input type="number" name="cnpj_empresa" placeholder="Ex: xx.xxx.xxx/xxxx-xx " id="cnpj_empresa" required>
+                </div>
+
+                <div class="form-group form-group-full">
+                    <label for="patrimonio">Patrimonio</label>
+                    <input type="number" placeholder="Ex: R$ 500.000" name="patrimonio" id="patrimonio" required>
+                </div>
+
                 <div class="form-group form-group-full">
                     <label for="atribuido_a">Atribuído a:</label>
                     <select name="atribuido_a" id="atribuido_a" required>
@@ -115,20 +126,20 @@
                 <div class="form-group">
                     <label for="data_instalacao">Data de Instalação</label>
                     <div class="date-input">
-                        <input type="date" id="data_instalacao" placeholder="Escolha a data">
+                        <input type="date" id="data_instalacao" placeholder="Escolha a data" required>
                         <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="data_compra">Data da Compra</label>
                     <div class="date-input">
-                        <input type="date" id="data_compra" placeholder="Escolha a data">
+                        <input type="date" id="data_compra" placeholder="Escolha a data" required>
                         <img src="https://img.icons8.com/material-outlined/24/000000/calendar--v1.png" class="icon" alt="calendario">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="custo_compra">Custo de Compra</label>
-                    <input type="text" id="custo_compra" placeholder="Ex: 1500">
+                    <input type="text" id="custo_compra" placeholder="Ex: 1500" required>
                 </div>
                 <div class="form-group">
                     <label for="data_termino_garantia">Data de Término da Garantia</label>
