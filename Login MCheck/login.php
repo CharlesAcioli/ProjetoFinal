@@ -19,17 +19,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <body>
     <img src="logo.svg" alt="">
     <main>
-        <form action="../Login MCheck/login.php" method="post">
+        <form action="../process/processar_login.php" method="post">
             <h1>LOGIN</h1>
 
             <div class="Usuario">
                 <label for="usuario">Usuário:</label>
-                <input type="text" name="usuario" placeholder="Informe o usuário">
+                <input type="text" name="usuario" placeholder="Informe o usuário" required>
             </div>
 
             <div class="Senha">
                 <label for="senha">Senha:</label>
-                <input type="password" placeholder="Digite sua senha" name="senha">
+                <input type="password" placeholder="Digite sua senha" name="senha" required>
             </div>
             <br>
 

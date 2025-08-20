@@ -1,5 +1,44 @@
 <?php 
 include_once('../php/config.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // 1. Verifique se o setor está definido na sessão
+if (isset($_SESSION['setor'])) {
+
+    // 2. Prepare a consulta SQL com um placeholder (?)
+    $sql = "SELECT id_equipamento, nome_equipamento, status, setor, patrimonio 
+            FROM equipamentos 
+            WHERE setor = ?";
+
+    $stmt = $conn->prepare($sql);
+
+    // 3. Vincule a variável de sessão ao placeholder
+    // A função bindParam() vincula o valor de $_SESSION['setor'] ao placeholder.
+    // 's' indica que o tipo de dado é uma string.
+    $stmt->bindParam(1, $_SESSION['setor'], PDO::PARAM_STR);
+
+    // 4. Execute a consulta
+    $stmt->execute();
+
+    // Opcional: Recupere os resultados para exibição
+    $equipamentos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+   
+    if ($equipamentos) {
+        foreach ($equipamentos as $equipamento) {
+            echo "Nome do Equipamento: " . htmlspecialchars($equipamento['nome_equipamento']) . "<br>";
+            echo "Setor: " . htmlspecialchars($equipamento['setor']) . "<br><br>";
+        }
+    } else {
+        echo "Nenhum equipamento encontrado para o setor: " . htmlspecialchars($_SESSION['setor']);
+    }
+
+} else {
+    // Caso a variável de sessão não esteja definida, redirecione ou exiba uma mensagem de erro
+    echo "Erro: Setor não definido na sessão. Por favor, faça login.";
+}
+
+}
 ?>
 
 <!DOCTYPE html>

@@ -13,36 +13,36 @@
         <h1>CADASTRO EMPRESA</h1>
         <form action="../../process/insertEmpresas.php" method="post">
             <label for="CNPJ">CNPJ</label>
-            <input type="text" placeholder="Informe o CNPJ da sua empresa" name="cnpj" id=""><br>
+            <input type="text" placeholder="Informe o CNPJ da sua empresa" name="cnpj" id="" required><br>
 
             <label for="Razao">Razão Social</label>
-            <input type="text" placeholder="Informe a razão social da sua empresa" name="Razao"><br>
+            <input type="text" placeholder="Informe a razão social da sua empresa" name="Razao" required><br>
 
             <label for="Fantasia">Nome Fantasia</label>
-            <input type="text" placeholder="Informe o nome fantasia da sua empresa" name="Fantasia"><br>
+            <input type="text" placeholder="Informe o nome fantasia da sua empresa" name="Fantasia" required><br>
 
             <label for="Estadual">Inscriçao Estadual</label>
-            <input type="text" placeholder="Incrição estadual da sua empresa" name="Estadual"><br>
+            <input type="text" placeholder="Incrição estadual da sua empresa" name="Estadual" required><br>
 
             <label for="Segmento">Segmento</label><br>
-            <input type="text" name="Segmento" id="" placeholder="Informe o segmento da sua empresa">
+            <input type="text" name="Segmento" id="" placeholder="Informe o segmento da sua empresa" required>
             <br>
 
             <label for="Produtos">Produtos/Serviços Oferecidos</label><br>
-            <input type="text" name="Produtos" id="" placeholder="Informe os produtos ou serviços oferecidos pela sua empresa">
+            <input type="text" name="Produtos" id="" placeholder="Informe os produtos ou serviços oferecidos pela sua empresa" required>
             <br>
 
             <label for="Email">Email</label>
-            <input type="text" placeholder="Informe o email registrado na sua empresa" name="Email" id=""><br>
+            <input type="text" placeholder="Informe o email registrado na sua empresa" name="Email" id="" required><br>
 
             <label for="Conf_email">Confirme seu Email</label>
-            <input type="text" placeholder="Repita o email para confirmação" name="" id=""><br>
+            <input type="text" placeholder="Repita o email para confirmação" name="" id="" required><br>
 
             <label for="Senha">Senha</label>
-            <input type="text" placeholder="Crie uma senha" name="senha_hash" id=""><br>
+            <input type="text" placeholder="Crie uma senha" name="senha_hash" id="" required><br>
 
             <label for="conf_senha">Confirme sua senha</label>
-            <input type="text" placeholder="Confirme a senha informada anteiormente" name="" id=""><br>
+            <input type="text" placeholder="Confirme a senha informada anteiormente" name="" id="" required><br>
 
             <div class="botao">
                 <button type="submit">Registrar</button>

@@ -5,7 +5,7 @@
         $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
 
-        $sql = "SELECT funcionario_id, nome_completo, senha_hash, email, telefone_celular, cpf FROM funcionarios WHERE nome_completo = ?";
+        $sql = "SELECT funcionario_id, nome_completo, senha_hash, email, telefone_celular, cpf, setor FROM funcionarios WHERE nome_completo = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$usuario]);
 
@@ -18,6 +18,7 @@
             $_SESSION['email'] = $user['email'];
             $_SESSION['telefone'] = $user['telefone_celular'];
             $_SESSION['cpf'] = $user['cpf'];
+            $_SESSION['setor'] = $user['setor'];
         
         header("Location: ../Perfil/perfil.php");
         exit;
