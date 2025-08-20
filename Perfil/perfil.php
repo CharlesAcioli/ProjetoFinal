@@ -1,43 +1,24 @@
 <?php 
+// É crucial iniciar a sessão no início do script para poder acessar $_SESSION
 include_once('../php/config.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // 1. Verifique se o setor está definido na sessão
-if (isset($_SESSION['setor'])) {
+// Pega o valor do setor da variável de sessão
+$setor = $_SESSION['setor']; 
 
-    // 2. Prepare a consulta SQL com um placeholder (?)
-    $sql = "SELECT id_equipamento, nome_equipamento, status, setor, patrimonio 
-            FROM equipamentos 
-            WHERE setor = ?";
+try {
+    // Prepara a consulta SQL com a cláusula WHERE antes da ORDER BY
+    // A função prepare() é mais segura para consultas com parâmetros.
+    $stmt = $conn->prepare("SELECT * FROM equipamentos WHERE atribuido_a = ? ORDER BY equipamento_id DESC");
 
-    $stmt = $conn->prepare($sql);
+    // Executa a consulta, passando o valor do setor como um array.
+    $stmt->execute([$setor]);
 
-    // 3. Vincule a variável de sessão ao placeholder
-    // A função bindParam() vincula o valor de $_SESSION['setor'] ao placeholder.
-    // 's' indica que o tipo de dado é uma string.
-    $stmt->bindParam(1, $_SESSION['setor'], PDO::PARAM_STR);
-
-    // 4. Execute a consulta
-    $stmt->execute();
-
-    // Opcional: Recupere os resultados para exibição
+    // Busca todos os resultados da consulta
     $equipamentos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   
-    if ($equipamentos) {
-        foreach ($equipamentos as $equipamento) {
-            echo "Nome do Equipamento: " . htmlspecialchars($equipamento['nome_equipamento']) . "<br>";
-            echo "Setor: " . htmlspecialchars($equipamento['setor']) . "<br><br>";
-        }
-    } else {
-        echo "Nenhum equipamento encontrado para o setor: " . htmlspecialchars($_SESSION['setor']);
-    }
-
-} else {
-    // Caso a variável de sessão não esteja definida, redirecione ou exiba uma mensagem de erro
-    echo "Erro: Setor não definido na sessão. Por favor, faça login.";
-}
-
+} catch (PDOException $e) {
+    echo "Erro ao buscar os dados: " . $e->getMessage();
+    exit();
 }
 ?>
 
@@ -53,7 +34,7 @@ if (isset($_SESSION['setor'])) {
 <body>
     <main>
         <nav>
-            <img src="../logo.svg" alt="">
+            <img class="nav" src="../logo.svg" alt="">
             <ul>
                 <li>
                     <img src="img/equipamentos.svg" alt="">
@@ -98,7 +79,7 @@ if (isset($_SESSION['setor'])) {
                 </li>
 
                 <li>
-                    <img src="img/config.svg" alt="">
+                    <img src="img/configurações.svg" alt="">
                     <i class="fa-solid fa-gear"></i>
                     <a href="">Configurações</a>
                 </li>
@@ -150,16 +131,20 @@ if (isset($_SESSION['setor'])) {
 
                     <tbody>
                         <tr>
-                            <td>Número ID</td>
-                            <td>Equipamentos</td>
-                            <td>Ativo/Inativo</td>
-                            <td>Nome do setor</td>
-                            <td>Número do Patrimônio</td>
+                            <?php if ($equipamentos): ?>
+                            <?php foreach ($equipamentos as $equip): ?>
+                            <td><?= htmlspecialchars($equip['equipamento_id']) ?></td>
+                            <td><?= htmlspecialchars($equip['nome_equipamento']) ?></td>
+                            <td><?= htmlspecialchars($equip['status']) ?></td>
+                            <td><?= htmlspecialchars($equip['atribuido_a']) ?></td>
+                            <td><?= htmlspecialchars($equip['patrimonio']) ?></td>
                             <td>
                                 <button><i class="fa-regular fa-eye"></i></button>
                                 <button><i class="fa-regular fa-pen-to-square"></i></button>
                                 <button><i class="fa-regular fa-trash-can"></i></button>
                             </td>
+                            <?php endforeach; ?>
+                            <?php endif; ?>
                         </tr>
                     </tbody>
                 </table>
