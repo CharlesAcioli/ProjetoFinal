@@ -40,7 +40,7 @@
 
         .search-input-container {
             position: relative;
-            width: 100%;
+            width: 100%
         }
 
         .search-input-container input {
@@ -95,6 +95,38 @@
             color: #aaa;
             pointer-events: none;
         }
+
+        .input-container {
+    position: relative;
+    width: 300px; /* Defina a largura do seu input container */
+}
+
+.input-container .icon {
+    position: absolute;
+    left: 10px; /* Posição horizontal do ícone */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajusta o centro exato */
+    width: 20px; /* Largura da sua imagem */
+    height: auto; /* Para manter a proporção da imagem */
+    z-index: 1; /* Garante que a imagem fique sobre o input */
+}
+
+.input-container input {
+    width: 100%;
+    /* Ajuste o padding para dar espaço à imagem */
+    padding: 10px 10px 10px 40px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* Opcional: Estilos para o foco */
+.input-container input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -135,6 +167,11 @@
             <i class="fas fa-chevron-down dropdown-icon"></i>
         </div>
     </div>
+</div>
+
+<div class="input-container">
+    <img src="../img/lupaa.png" alt="Ícone de pesquisa" class="icon">
+    <input type="text" placeholder="Pesquisar...">
 </div>
 
 </body>
