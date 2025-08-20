@@ -35,6 +35,10 @@ li{
     background: #0F9FE8;
 }
 
+li > img{
+    display: none;
+}
+
 i{
     font-size: 20px;
     color: #fff;
@@ -192,24 +196,39 @@ button i.fa-trash-can:hover{
     }
 
     nav {
-        width: 100%;
+        width: 100vw;
+        /* height: 100vh; */
         text-align: center;
     }
 
+    nav > img{
+        height: 10%;
+    }
+
     nav ul {
+        height: 80%;
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
     }
 
     nav li {
-        margin: 10px;
+        margin: 0 5px;
+        width: 40%;
+        height: auto;
+        border-radius: 13px;
     }
 
-    nav img {
-        width: 30%;
-        margin: 20px auto;
+    nav ul img {
+        background: orange;
+        width: 100%;
+        display: flex;
+    }
+
+    nav ul a,
+    nav ul i{
+        display: none !important;
     }
 
     form {

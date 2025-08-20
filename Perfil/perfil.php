@@ -53,37 +53,52 @@ if (isset($_SESSION['setor'])) {
 <body>
     <main>
         <nav>
-            <img src="../Cadastro Usuário/logo.svg" alt="">
+            <img src="../logo.svg" alt="">
             <ul>
                 <li>
+                    <img src="img/equipamentos.svg" alt="">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                     <a href="">Equipamentos</a>
                 </li>
+
                 <li>
+                    <img src="img/adicionar equipamentos.svg" alt="">
                     <i class="fas fa-plus-circle"></i>
                     <a href="">Adicionar Equipamentos</a>
                 </li>
+
                 <li>
+                    <img src="img/equipamento com defeito.svg" alt="">
                     <i class="fas fa-exclamation-triangle"></i>
                     <a href="">Equip. c/Defeito</a>
                 </li>
+
                 <li>
+                    <img src="img/usuários.svg" alt="">
                     <i class="fa-solid fa-user-group"></i>
                     <a href="">Usuários</a>
                 </li>
+
                 <li>
+                    <img src="img/OS.svg" alt="">
                     <i class="fas fa-clipboard-list"></i>
                     <a href="">Ordens de serviço</a>
                 </li>
+
                 <li>
+                    <img src="img/relatórios.svg" alt="">
                     <i class="fas fa-chart-column"></i>
                     <a href="">Relatórios</a>
                 </li>
+
                 <li>
+                    <img src="img/manutenção.svg" alt="">
                     <i class="fa-solid fa-wrench"></i>
                     <a href="">Manutenção</a>
                 </li>
+
                 <li>
+                    <img src="img/config.svg" alt="">
                     <i class="fa-solid fa-gear"></i>
                     <a href="">Configurações</a>
                 </li>

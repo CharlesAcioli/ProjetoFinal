@@ -11,137 +11,149 @@ body {
 }
 
 
-header h3 {
-    font-size: 1.2em;
+nav header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 20vw;
+    height: 100vh;
+    word-break: break-all;
+    background-color: #7497FF;
+    position: fixed;
+    z-index: 100;
+}
+
+li {
+    display: flex;
 }
 
 header img {
-    width: 100px;
-}
-
-header {
-    height: 100vh;
-    width: 30vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #7497FF;
-    z-index: 100; 
-    overflow-y: auto;
-}
-
-.container {
-    margin: 0 auto;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.logo img {
-    width: 160px;
+    width: 80%;
     height: auto;
 }
 
-.equipamentos,
-.add,
-.defeito,
-.user,
-.ordem,
-.relat,
-.manu,
-.config {
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 15px;
+}
+
+li a {
     display: flex;
     align-items: center;
-    gap: 0.8em;
-    padding: 10px 15px;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
 }
 
-.equipamentos:hover,
-.add:hover,
-.defeito:hover,
-.user:hover,
-.ordem:hover,
-.relat:hover,
-.manu:hover,
-.config:hover {
-    background-color: #6085e6;
-}
-
-.equipamentos img,
-.add img,
-.defeito img,
-.user img,
-.ordem img,
-.relat img,
-.manu img,
-.config img {
+li img {
+    margin-right: 5px;
     width: 32px;
     height: 32px;
 }
 
-main {
-    width: 100%;
+a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+/* main */
 
-.painel {
+main {
+    width: 100%;
+    margin-left: 20vw;
+}
+
+h2 {
     margin: 10px;
 }
 
-.conte {
-    max-width: 70%;
-    height: 150px;
-    width: 80%;
-    padding: 50px;
-    background-color: #F8F8F8;
-    box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.3);
-    margin: 80px auto;
-    display: flex;
-    gap: 10rem;
-}
-
-.conte h3 {
-    color: #000000;
-    margin: 15px;
-}
-
-
 .inventario {
-    color: #304F6E;
-    margin: 20px;
     display: flex;
-    gap: 87rem; 
+    gap: 35vw;
 }
 
-form input[type="text"] {
-width: 400px;
-height: 35px;
-border-radius: 5px;
+.inventario button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #4169E1;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    font-size: 1.0rem;
+    cursor: pointer;
+    word-break: break-all;
+}
 
+button img {
+    margin: 5px;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    gap: 50px;
+}
+
+.pesquisa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filtro [type="text"] {
+    width: 13vw;
+    height: 3vh;
+    border-radius: 5px;
+    background-color: #E8EBED;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.filtro img {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-40%);
+}
+
+.select-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
 }
 
 select {
-    width: 400px;
-    height: 35px;
+    width: 13vw;
+    height: 3vh;
     border-radius: 5px;
-}
-
-.butao button {
-    height: 40px; 
-    width: 250px;  
-    font-size: 16px; 
-    background-color:#007BFF;
-    color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    outline: none;
+    background-color: #E8EBED;
+    text-align: center;
+    gap: 10px;
 }
 
+.select-cont img {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-40%);
+    word-break: break-all;
+}
