@@ -33,12 +33,12 @@
             <br>
 
             <label for="Email">Email</label>
-            <input type="text" placeholder="Informe o email registrado na sua empresa" name="Email" id="" required><br>
+            <input type="email" placeholder="Informe o email registrado na sua empresa" name="Email" id="" required><br>
 
             <label for="Conf_email">Confirme seu Email</label>
             <input type="text" placeholder="Repita o email para confirmação" name="" id="" required><br>
 
-            <label for="Senha">Senha</label>
+            <label for="senha_hash">Senha</label>
             <input type="text" placeholder="Crie uma senha" name="senha_hash" id="" required><br>
 
             <label for="conf_senha">Confirme sua senha</label>

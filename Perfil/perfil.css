@@ -169,27 +169,27 @@ td button:hover{
     cursor: pointer;
 }
 
-button i.fa-eye{
+i.fa-eye{
     color: #848484;
 }
 
-button i.fa-eye:hover{
+i.fa-eye:hover{
     color: #0F9FE8;
 }
 
-button i.fa-pen-to-square{
+i.fa-pen-to-square{
     color: #848484;
 }
 
-button i.fa-pen-to-square:hover{
-    color: #28a745;
+i.fa-pen-to-square:hover{
+    color:28a745;
 }
 
-button i.fa-trash-can{
+i.fa-trash-can{
     color: #dc3545;
 }
 
-button i.fa-trash-can:hover{
+i.fa-trash-can:hover{
     font-weight: bold;
 }
 

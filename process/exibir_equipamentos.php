@@ -152,7 +152,7 @@ try {
     </table>
 
     <div class="voltar">
-        <a href="../insertEquipamentos.html">Cadastrar Novo Equipamento</a>
+        <a href="../paginas/add equipamentos/index.html">Cadastrar Novo Equipamento</a>
     </div>
 
 </body>

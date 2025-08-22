@@ -1,21 +1,19 @@
 <?php
 include_once('../php/config.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         $id = $_POST['funcionario_id'];
         $nome_completo = $_POST['nome_completo'];
         $email = $_POST['email'];
         $cpf = $_POST['cpf'];
         $telefone_celular = $_POST['telefone_celular'];
-        $tipo_usuario = $_POST['tipo_usuario'];
 
         $sql = "UPDATE funcionarios SET 
                 nome_completo = :nome_completo,
                 email = :email,
                 cpf = :cpf,
-                telefone_celular = :telefone_celular,
-                tipo_usuario = :tipo_usuario
+                telefone_celular = :telefone_celular
                 WHERE funcionario_id = :id";
         
         $stmt = $conn->prepare($sql);
@@ -23,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':cpf', $cpf);
         $stmt->bindParam(':telefone_celular', $telefone_celular);
-        $stmt->bindParam(':tipo_usuario', $tipo_usuario);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
         $stmt->execute();
@@ -105,14 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="text" name="telefone_celular" value="<?= htmlspecialchars($funcionario['telefone_celular']) ?>">
             </div>
 
-            <div class="form-group">
-                <label for="tipo_usuario">Tipo de Usuário</label>
-                <select name="tipo_usuario" required>
-                    <option value="Administrador" <?= ($funcionario['tipo_usuario'] == 'Administrador') ? 'selected' : '' ?>>Administrador</option>
-                    <option value="Técnico" <?= ($funcionario['tipo_usuario'] == 'Técnico') ? 'selected' : '' ?>>Técnico</option>
-                    <option value="Normal" <?= ($funcionario['tipo_usuario'] == 'Normal') ? 'selected' : '' ?>>Normal</option>
-                </select>
-            </div>
 
             <button type="submit">Salvar Alterações</button>
             <a href="exibir_funcionarios.php" class="btn-cancelar">Cancelar</a>
