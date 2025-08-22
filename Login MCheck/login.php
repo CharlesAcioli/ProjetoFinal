@@ -24,12 +24,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
             <div class="Usuario">
                 <label for="usuario">Usuário:</label>
-                <input type="text" name="usuario" placeholder="Informe o usuário" required>
+                <input type="text" name="usuario" placeholder="Informe o usuário">
             </div>
 
             <div class="Senha">
                 <label for="senha">Senha:</label>
-                <input type="password" placeholder="Digite sua senha" name="senha" required>
+                <input type="password" placeholder="Digite sua senha" name="senha">
             </div>
             <br>
 

@@ -1,9 +1,9 @@
-<?php
+<?php 
 // É crucial iniciar a sessão no início do script para poder acessar $_SESSION
 include_once('../php/config.php');
 
 // Pega o valor do setor da variável de sessão
-$setor = $_SESSION['setor'];
+$setor = $_SESSION['setor']; 
 
 try {
     // Prepara a consulta SQL com a cláusula WHERE antes da ORDER BY
@@ -15,6 +15,7 @@ try {
 
     // Busca todos os resultados da consulta
     $equipamentos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 } catch (PDOException $e) {
     echo "Erro ao buscar os dados: " . $e->getMessage();
     exit();
@@ -23,7 +24,6 @@ try {
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +31,6 @@ try {
     <link rel="stylesheet" href="perfil.css">
     <title>Document</title>
 </head>
-
 <body>
     <main>
         <nav>
@@ -103,22 +102,16 @@ try {
 
                     <dl>
                         <dt>Nome</dt>
-                        <dd><?php echo htmlspecialchars($_SESSION['username']); ?></h2>
-                        </dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['username']); ?></h2></dd>
 
                         <dt>Email</dt>
-                        <dd><?php echo htmlspecialchars($_SESSION['email']); ?></h2>
-                        </dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['email']); ?></h2></dd>
 
                         <dt>Telefone</dt>
-                        <dd><?php echo htmlspecialchars($_SESSION['telefone']); ?></h2>
-                        </dd>
-                        </dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['telefone']); ?></h2></dd></dd>
 
                         <dt>CPF</dt>
-                        <dd><?php echo htmlspecialchars($_SESSION['cpf']); ?></h2>
-                        </dd>
-                        </dd>
+                        <dd><?php echo htmlspecialchars($_SESSION['cpf']); ?></h2></dd></dd>
                     </dl>
                 </section>
             </article>
@@ -137,34 +130,26 @@ try {
                     </thead>
 
                     <tbody>
-                        <?php if ($equipamentos): ?>
+                        <tr>
+                            <?php if ($equipamentos): ?>
                             <?php foreach ($equipamentos as $equip): ?>
-                                <tr>
-                                    <td><?= htmlspecialchars($equip['equipamento_id']) ?></td>
-                                    <td><?= htmlspecialchars($equip['nome_equipamento']) ?></td>
-                                    <td><?= htmlspecialchars($equip['status']) ?></td>
-                                    <td><?= htmlspecialchars($equip['atribuido_a']) ?></td>
-                                    <td><?= htmlspecialchars($equip['patrimonio']) ?></td>
-                                    <td>
-                                        <a href="../process/editarEquipamento.php?id=<?= $equip['equipamento_id'] ?>" class="btn">
-                                            <i class="fa-regular fa-eye"></i>
-                                        </a>
-                                        <a href="editar.php?id=<?= $equip['equipamento_id'] ?>" class="btn">
-                                            <i class="fa-regular fa-pen-to-square"></i>
-                                        </a>
-                                        <a href="excluir.php?id=<?= $equip['equipamento_id'] ?>" class="btn">
-                                            <i class="fa-regular fa-trash-can"></i>
-                                        </a>
-
-                                    </td>
-                                </tr>
+                            <td><?= htmlspecialchars($equip['equipamento_id']) ?></td>
+                            <td><?= htmlspecialchars($equip['nome_equipamento']) ?></td>
+                            <td><?= htmlspecialchars($equip['status']) ?></td>
+                            <td><?= htmlspecialchars($equip['atribuido_a']) ?></td>
+                            <td><?= htmlspecialchars($equip['patrimonio']) ?></td>
+                            <td>
+                                <button><i class="fa-regular fa-eye"></i></button>
+                                <button><i class="fa-regular fa-pen-to-square"></i></button>
+                                <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                             <?php endforeach; ?>
-                        <?php endif; ?>
+                            <?php endif; ?>
+                        </tr>
                     </tbody>
                 </table>
             </section>
         </form>
     </main>
 </body>
-
 </html>
