@@ -91,7 +91,7 @@ header button{
     height: 30px;
     align-self: center;
     margin: 5px 0;
-    border: 1px solid #000;
+    border: 1px solid #0F9FE8;
     border-radius: 5px;
     font-size: larger;
     font-weight: bold;
@@ -283,7 +283,90 @@ i.fa-trash-can:hover{
 }
 
 @media screen and (min-width: 820px) and (max-width: 1024px) {
-    nav{
-        width: 50vw;
+    main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    nav {
+        background-color: #fff;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav{
+        width: 30vw;
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        width: 75%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav li {
+        width: 204px;
+        height: 12.8rem;
+        margin: 15px 10px;
+        border-radius: 13px;
+    }
+
+    nav ul img {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        border-radius: 13px;
+    }
+
+    nav ul a,
+    nav ul i{
+        display: none !important;
+    }
+
+    form {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card {
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    header, dl {
+        width: 100%;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .s-table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    td button {
+        width: 30px;
+    }
+
+    nav i {
+        width: 16px;
+        height: 16px;
     }
 }
