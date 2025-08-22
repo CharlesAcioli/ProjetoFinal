@@ -35,9 +35,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
             <div class="acoes">
                 <button type="submit" name="entrar" value="entrar">Login</button>
-                <button type="submit" name="cadastrar" value="cadastrar">Cadastrar</button>
+                <button windown.href.location="../insertFuncionarios.html" type="submit" name="" value="">Cadastrar</button>
             </div>
         </form>
     </main>
+
 </body>
 </html>
