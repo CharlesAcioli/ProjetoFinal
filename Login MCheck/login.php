@@ -7,6 +7,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     //     header("Location:../Cadastro Usuário/cadastro_usuario.php");
     //     exit;
     // }
+
+    
 }
 ?>
 

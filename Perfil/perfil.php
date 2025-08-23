@@ -1,10 +1,16 @@
 <?php
-include_once('../php/config.php');
+require_once('../php/config.php');
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
+    header("Location: ../login.php");
+}
+
 $setor = $_SESSION['setor'];
 $nome = $_SESSION['username'];
 $email = $_SESSION['email'];
 $telefone = $_SESSION['telefone'];
 $cpf = $_SESSION['cpf'];
+$cargo = $_SESSION['cargo'];
 try {
     $stmt = $conn->prepare("SELECT * FROM equipamentos WHERE atribuido_a = ? ORDER BY equipamento_id DESC");
     $stmt->execute([$setor]);
@@ -77,7 +83,7 @@ try {
             <article>
                 <section class="card">
                     <header>
-                        <h3>FUNÇÃO</h3>
+                        <h3><?php echo $cargo; ?></h3>
                         <hr><br>
                         <img src="../Cadastro Usuário/logo.svg" alt="Foto do usuário"><br>
                         <button type="button" onclick="window.location.href='../process/logout.php'">Sair</button>
