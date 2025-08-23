@@ -128,7 +128,7 @@ try {
     }
     ?>
     <div class="voltar">
-        <a href="../insertEmpresas.html">Cadastrar Nova Empresa</a>
+        <a href="../Login MCheck/Cadastro MCheck/cadastroEmpresa.php">Cadastrar Nova Empresa</a>
     </div>
 </body>
 </html>
