@@ -70,78 +70,72 @@ main {
 }
 
 h2 {
-    padding: 10px;
-}
-
-.ordem {
-    display: flex;
-    align-items: center;
     margin: 10px;
 }
 
-.conte {
+.inventario {
     display: flex;
-    max-width: 70%;
-    width: 100%;
-    padding: 10px;
-    background-color: #F8F8F8;
-    box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.3);
-    position: relative;
-    left: 15%;
+    gap: 45vw;
 }
 
-.conte h3 {
-    color: #304F6E;
+.inventario button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #4169E1;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    font-size: 1.0rem;
+    cursor: pointer;
+    word-break: break-all;
+}
+
+button img {
     margin: 5px;
 }
 
-.form-row {
-  display: flex;
-  gap: 20px; 
-  align-items: flex-start; 
-}
-
-.form-row label {
-    margin: 10px;
-}
-
-.conte, input {
+.cont {
     display: flex;
-    flex-direction: column;
-    
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    gap: 50px;
+    flex: 1;
 }
 
-.form-group {
-  display: flex; 
-  flex-direction: column;
+.filtro, .selec {
+    position: relative;
+    width: 300px;
+    flex: 1;
 }
 
-.form-group label {
-  font-size: 16px; 
-  font-weight: bold; 
-  color: #334d6e;
-  margin-bottom: 8px;
+.filtro .icon, .selec .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: auto;
+    z-index: 1;
 }
 
-.form-group input {
-  margin: 10px;
-  padding: 10px 10px;
-  border: 1px solid #d1d9e6; 
-  border-radius: 6px;
-  font-size: 16px; 
-  color: #5d6d84; 
-  background-color: #eef2f7; 
-  outline: none; 
-  width: 500px; 
-  box-sizing: border-box; 
+.filtro input, .selec select {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: none;
+    background-color: #E8EBED;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    flex: 1;
 }
 
-.form-group input::placeholder {
-  color: #8c9cb1;
-  font-size: 14px; 
+.filtro input:focus {
+    outline: none;
+    border-color: #007B77;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
 }
-
-
-
-
-
