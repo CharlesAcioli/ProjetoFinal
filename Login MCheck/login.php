@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <title>Pagina de Login</title>
 </head>
 <body>
-    <img src="logo.svg" alt="">
+    <img src="../logo.svg" alt="">
     <main>
         <form action="../process/processar_login.php" method="post">
             <h1>LOGIN</h1>

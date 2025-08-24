@@ -33,7 +33,7 @@ try {
 <body>
     <main>
         <nav>
-            <img class="nav" src="../logo.svg" alt="">
+            <img class="img-nav" src="../logo.svg" alt="">
             <ul>
                 <li>
                     <img src="img/equipamentos.svg" alt="">
