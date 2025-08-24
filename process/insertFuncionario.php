@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':bairro', $bairro);
         $stmt->bindParam('cep', $cep);
         if ($stmt->execute()) {
-            header("Location: exibir_funcionarios.php");
+            header("Location: ../perfil/perfil.php");
             exit();
         } else {
             echo "Erro ao registrar a empresa.";

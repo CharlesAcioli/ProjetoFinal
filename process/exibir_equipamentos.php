@@ -1,159 +1,146 @@
 <?php
+// Inclui o arquivo de configuração do banco de dados
 include_once('../php/config.php');
 
-try {
-    $stmt = $conn->query("SELECT * FROM equipamentos ORDER BY equipamento_id DESC");
-    $equipamentos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    echo "Erro ao buscar os dados: " . $e->getMessage();
+// Verifica se o 'id' foi passado via método GET
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    try {
+        // Prepara a consulta SQL para buscar o equipamento com o ID especificado
+        $stmt = $conn->prepare("SELECT * FROM equipamentos WHERE equipamento_id = :id");
+        
+        // Vincula o parâmetro ID de forma segura para evitar SQL Injection
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        
+        // Executa a consulta
+        $stmt->execute();
+        
+        // Pega o resultado da consulta
+        $equipamento = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Se o equipamento não for encontrado, exibe uma mensagem de erro
+        if (!$equipamento) {
+            echo "Equipamento não encontrado!";
+            exit();
+        }
+    } catch (PDOException $e) {
+        echo "Erro ao buscar o equipamento: " . $e->getMessage();
+        exit();
+    }
+} else {
+    // Se o 'id' não foi fornecido, exibe uma mensagem de erro
+    echo "ID do equipamento não especificado.";
     exit();
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Equipamentos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Equipamento</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-            padding: 30px;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            background-color: #fff;
-        }
-
-        th, td {
-            padding: 10px 15px;
-            border: 1px solid #ccc;
-            text-align: left;
-        }
-
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .voltar {
-            display: block;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .voltar a {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 18px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .voltar a:hover {
-            background-color: #0056b3;
-        }
-        
-        .btn-acao {
-            padding: 5px 10px;
-            margin: 0 2px;
-            text-decoration: none;
-            border-radius: 3px;
-            color: white;
-        }
-
-        .btn-editar {
-            background-color: #ffc107;
-        }
-
-        .btn-excluir {
-            background-color: #dc3545;
-        }
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2 { text-align: center; color: #333; }
+        .info-item { margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .info-item:last-child { border-bottom: none; }
+        .info-label { font-weight: bold; color: #555; display: inline-block; width: 200px; }
     </style>
 </head>
 <body>
 
-    <h2>Equipamentos Cadastrados</h2>
+    <div class="container">
+        <h1>Informações do Equipamento</h1>
+        <hr>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Tipo</th>
-                <th>Status</th>
-                <th>Localização</th>
-                <th>Fabricante</th>
-                <th>Modelo</th>
-                <th>Série</th>
-                <th>Criticidade</th>
-                <th>Departamento</th>
-                <th>Atribuído a</th>
-                <th>Data Instalação</th>
-                <th>Data Compra</th>
-                <th>Garantia</th>
-                <th>Custo (R$)</th>
-                <th>Especificações</th>
-                <th>Dados de Uso</th>
-                <th>Notas</th>
-                <th>Patrimônio</th>
-                <th>CNPJ</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if ($equipamentos): ?>
-                <?php foreach ($equipamentos as $equip): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($equip['equipamento_id']) ?></td>
-                        <td><?= htmlspecialchars($equip['nome_equipamento']) ?></td>
-                        <td><?= htmlspecialchars($equip['tipo_equipamento']) ?></td>
-                        <td><?= htmlspecialchars($equip['status']) ?></td>
-                        <td><?= htmlspecialchars($equip['localizacao']) ?></td>
-                        <td><?= htmlspecialchars($equip['fabricante']) ?></td>
-                        <td><?= htmlspecialchars($equip['numero_modelo']) ?></td>
-                        <td><?= htmlspecialchars($equip['numero_serie']) ?></td>
-                        <td><?= htmlspecialchars($equip['criticidade']) ?></td>
-                        <td><?= htmlspecialchars($equip['departamento']) ?></td>
-                        <td><?= htmlspecialchars($equip['atribuido_a']) ?></td>
-                        <td><?= htmlspecialchars($equip['data_instalacao']) ?></td>
-                        <td><?= htmlspecialchars($equip['data_compra']) ?></td>
-                        <td><?= htmlspecialchars($equip['data_termino_garantia']) ?></td>
-                        <td><?= number_format($equip['custo_compra'], 2, ',', '.') ?></td>
-                        <td><?= htmlspecialchars($equip['especificacoes']) ?></td>
-                        <td><?= htmlspecialchars($equip['dados_uso']) ?></td>
-                        <td><?= htmlspecialchars($equip['notas']) ?></td>
-                        <td><?= htmlspecialchars($equip['patrimonio']) ?></td>
-                        <td><?= htmlspecialchars($equip['cnpj_empresa']) ?></td>
-                        <td>
-                            <a href="editarEquipamento.php?id=<?= htmlspecialchars($equip['equipamento_id']) ?>" class="btn-acao btn-editar">Editar</a>
-                            <a href="excluirEquipamento.php?id=<?= htmlspecialchars($equip['equipamento_id']) ?>" class="btn-acao btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este equipamento?');">Excluir</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="21">Nenhum equipamento cadastrado.</td>
-                </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
+        <div class="info-item">
+            <span class="info-label">ID do Equipamento:</span>
+            <span><?= htmlspecialchars($equipamento['equipamento_id'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
 
-    <div class="voltar">
-        <a href="../paginas/add equipamentos/index.html">Cadastrar Novo Equipamento</a>
-    </div>
+        <div class="info-item">
+            <span class="info-label">Nome:</span>
+            <span><?= htmlspecialchars($equipamento['nome_equipamento'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+        
+        <div class="info-item">
+            <span class="info-label">Tipo:</span>
+            <span><?= htmlspecialchars($equipamento['tipo_equipamento'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
 
-</body>
-</html>
+        <div class="info-item">
+            <span class="info-label">Status:</span>
+            <span><?= htmlspecialchars($equipamento['status'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Localização:</span>
+            <span><?= htmlspecialchars($equipamento['localizacao'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Fabricante:</span>
+            <span><?= htmlspecialchars($equipamento['fabricante'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+        
+        <div class="info-item">
+            <span class="info-label">Número do Modelo:</span>
+            <span><?= htmlspecialchars($equipamento['numero_modelo'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+        
+        <div class="info-item">
+            <span class="info-label">Número de Série:</span>
+            <span><?= htmlspecialchars($equipamento['numero_serie'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Criticidade:</span>
+            <span><?= htmlspecialchars($equipamento['criticidade'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Departamento:</span>
+            <span><?= htmlspecialchars($equipamento['departamento'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Atribuído a:</span>
+            <span><?= htmlspecialchars($equipamento['atribuido_a'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Data de Instalação:</span>
+            <span><?= htmlspecialchars($equipamento['data_instalacao'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Data de Compra:</span>
+            <span><?= htmlspecialchars($equipamento['data_compra'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Custo de Compra:</span>
+            <span><?= htmlspecialchars($equipamento['custo_compra'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Fim da Garantia:</span>
+            <span><?= htmlspecialchars($equipamento['data_termino_garantia'], ENT_QUOTES, 'UTF-8') ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Especificações:</span>
+            <span><?= nl2br(htmlspecialchars($equipamento['especificacoes'], ENT_QUOTES, 'UTF-8')) ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Dados de Uso:</span>
+            <span><?= nl2br(htmlspecialchars($equipamento['dados_uso'], ENT_QUOTES, 'UTF-8')) ?></span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Notas:</span>
+            <span><?= nl2br(htmlspecialchars($equipamento['notas'], ENT_QUOTES, 'UTF-8')) ?></span>

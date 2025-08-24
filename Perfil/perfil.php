@@ -129,9 +129,9 @@ try {
                                     <td><?= htmlspecialchars($equip['atribuido_a']) ?></td>
                                     <td><?= htmlspecialchars($equip['patrimonio']) ?></td>
                                     <td>
-                                        <button><i class="fa-regular fa-eye"></i></button>
-                                        <button><i class="fa-regular fa-pen-to-square"></i></button>
-                                        <button><i class="fa-regular fa-trash-can"></i></button>
+                                        <button type="button" onclick="window.location.href='../process/exibir_equipamentos.php?id=<?= htmlspecialchars($equip['equipamento_id'], ENT_QUOTES, 'UTF-8') ?>'"><i class="fa-regular fa-eye"></i></button>
+                                        <button type="button" onclick="window.location.href='../process/editarEquipamento.php?id=<?= htmlspecialchars($equip['equipamento_id'], ENT_QUOTES, 'UTF-8') ?>'"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <button type="button" onclick="window.location.href='../process/excluirEquipamento.php?id=<?= htmlspecialchars($equip['equipamento_id'], ENT_QUOTES, 'UTF-8') ?>'"><i class="fa-regular fa-trash-can"></i></button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
