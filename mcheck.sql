@@ -17,7 +17,8 @@
 
 -- Copiando estrutura do banco de dados para mcheck
 DROP DATABASE IF EXISTS `mcheck`;
-CREATE DATABASE IF NOT EXISTS `mcheck` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `mcheck` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+ */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `mcheck`;
 
 -- Copiando estrutura para tabela mcheck.empresas
@@ -27,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `empresas` (
   `razao_social` varchar(255) NOT NULL,
   `nome_fantasia` varchar(255) NOT NULL,
   `foto_emp` varchar(50) DEFAULT NULL,
-  `inscricao_estadual` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `inscricao_estadual` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `segmento` varchar(100) NOT NULL,
   `produtos_servicos` text,
   `email_contato` varchar(255) NOT NULL,
@@ -36,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `empresas` (
   PRIMARY KEY (`cnpj`),
   UNIQUE KEY `razao_social` (`razao_social`),
   UNIQUE KEY `email_contato` (`email_contato`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Copiando dados para a tabela mcheck.empresas: ~5 rows (aproximadamente)
 INSERT INTO `empresas` (`cnpj`, `razao_social`, `nome_fantasia`, `foto_emp`, `inscricao_estadual`, `segmento`, `produtos_servicos`, `email_contato`, `senha_hash`, `data_registro`) VALUES
@@ -52,32 +53,30 @@ CREATE TABLE IF NOT EXISTS `equipamentos` (
   `equipamento_id` int NOT NULL AUTO_INCREMENT,
   `nome_equipamento` varchar(255) NOT NULL,
   `tipo_equipamento` varchar(100) NOT NULL,
-  `status` enum('Em manutenção','Precisa de reparo','Operacional') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `status` enum('Em manutenção','Precisa de reparo','Operacional') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `localizacao` varchar(255) NOT NULL,
-  `fabricante` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `fabricante` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `numero_modelo` varchar(100) DEFAULT NULL,
   `numero_serie` varchar(100) DEFAULT NULL,
-  `criticidade` enum('alta','media','baixa') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `departamento` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `atribuido_a` enum('Tecnologia da Informação','Saúde e Bem-Estar','Serviços Financeiros','Varejo e Comércio','Educação','Construção Civil','Indústria Manufatureira','Mídia e Entretenimento','Governo e Setor Público','Turismo e Hotelaria','Serviços Imobiliários','Biotecnologia','Sustentabilidade e Meio Ambiente','Marketing e Publicidade','Indústria Alimentícia','Consultoria','Setor Agrícola','Energia','Transporte e Logística','Recursos Humanos') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `criticidade` enum('alta','media','baixa') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `departamento` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `atribuido_a` enum('Tecnologia da Informação','Saúde e Bem-Estar','Serviços Financeiros','Varejo e Comércio','Educação','Construção Civil','Indústria Manufatureira','Mídia e Entretenimento','Governo e Setor Público','Turismo e Hotelaria','Serviços Imobiliários','Biotecnologia','Sustentabilidade e Meio Ambiente','Marketing e Publicidade','Indústria Alimentícia','Consultoria','Setor Agrícola','Energia','Transporte e Logística','Recursos Humanos') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `data_instalacao` date NOT NULL,
   `data_compra` date NOT NULL,
   `custo_compra` decimal(10,2) NOT NULL,
   `data_termino_garantia` date NOT NULL,
   `especificacoes` text,
-  `dados_uso` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `notas` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `dados_uso` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `notas` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `data_registro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ultima_atualizacao` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `patrimonio` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `patrimonio` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `cnpj_empresa` varchar(18) NOT NULL,
   PRIMARY KEY (`equipamento_id`),
   UNIQUE KEY `numero_serie` (`numero_serie`),
   KEY `FK_equipamentos_empresas` (`cnpj_empresa`),
-  KEY `FK_equipamentos_setores` (`atribuido_a`),
-  CONSTRAINT `FK_equipamentos_empresas` FOREIGN KEY (`cnpj_empresa`) REFERENCES `empresas` (`cnpj`),
-  CONSTRAINT `FK_equipamentos_setores` FOREIGN KEY (`atribuido_a`) REFERENCES `setores` (`setores`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `FK_equipamentos_empresas` FOREIGN KEY (`cnpj_empresa`) REFERENCES `empresas` (`cnpj`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Copiando dados para a tabela mcheck.equipamentos: ~6 rows (aproximadamente)
 INSERT INTO `equipamentos` (`equipamento_id`, `nome_equipamento`, `tipo_equipamento`, `status`, `localizacao`, `fabricante`, `numero_modelo`, `numero_serie`, `criticidade`, `departamento`, `atribuido_a`, `data_instalacao`, `data_compra`, `custo_compra`, `data_termino_garantia`, `especificacoes`, `dados_uso`, `notas`, `data_registro`, `ultima_atualizacao`, `patrimonio`, `cnpj_empresa`) VALUES
@@ -98,19 +97,17 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
   `cpf` varchar(14) NOT NULL,
   `senha_hash` varchar(255) NOT NULL,
   `telefone_celular` varchar(20) DEFAULT NULL,
-  `cargo` enum('Administrador','Diretor','Gerente','Supervisor','Funcionario','Tecnico') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `tipo_usuario` enum('Master','Lider','Comum') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `setor` enum('Tecnologia da Informação','Saúde e Bem-Estar','Serviços Financeiros','Varejo e Comércio','Educação','Construção Civil','Indústria Manufatureira','Mídia e Entretenimento','Governo e Setor Público','Turismo e Hotelaria','Serviços Imobiliários','Biotecnologia','Sustentabilidade e Meio Ambiente','Marketing e Publicidade','Indústria Alimentícia','Consultoria','Setor Agrícola','Energia','Transporte e Logística','Recursos Humanos') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `cargo` enum('Administrador','Diretor','Gerente','Supervisor','Funcionario','Tecnico') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `tipo_usuario` enum('Master','Lider','Comum') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `setor` enum('Tecnologia da Informação','Saúde e Bem-Estar','Serviços Financeiros','Varejo e Comércio','Educação','Construção Civil','Indústria Manufatureira','Mídia e Entretenimento','Governo e Setor Público','Turismo e Hotelaria','Serviços Imobiliários','Biotecnologia','Sustentabilidade e Meio Ambiente','Marketing e Publicidade','Indústria Alimentícia','Consultoria','Setor Agrícola','Energia','Transporte e Logística','Recursos Humanos') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `data_cadastro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `endereco` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '',
-  `bairro` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '',
+  `endereco` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '',
+  `bairro` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '',
   `cep` int DEFAULT NULL,
   PRIMARY KEY (`funcionario_id`),
   UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `cpf` (`cpf`),
-  KEY `FK_funcionarios_setores` (`setor`),
-  CONSTRAINT `FK_funcionarios_setores` FOREIGN KEY (`setor`) REFERENCES `setores` (`setores`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `cpf` (`cpf`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Copiando dados para a tabela mcheck.funcionarios: ~5 rows (aproximadamente)
 INSERT INTO `funcionarios` (`funcionario_id`, `nome_completo`, `email`, `foto_func`, `cpf`, `senha_hash`, `telefone_celular`, `cargo`, `tipo_usuario`, `setor`, `data_cadastro`, `endereco`, `bairro`, `cep`) VALUES
@@ -124,10 +121,10 @@ INSERT INTO `funcionarios` (`funcionario_id`, `nome_completo`, `email`, `foto_fu
 DROP TABLE IF EXISTS `setores`;
 CREATE TABLE IF NOT EXISTS `setores` (
   `id_setor` int NOT NULL AUTO_INCREMENT,
-  `setores` enum('Tecnologia da Informação','Saúde e Bem-Estar','Serviços Financeiros','Varejo e Comércio','Educação','Construção Civil','Indústria Manufatureira','Mídia e Entretenimento','Governo e Setor Público','Turismo e Hotelaria','Serviços Imobiliários','Biotecnologia','Sustentabilidade e Meio Ambiente','Marketing e Publicidade','Indústria Alimentícia','Consultoria','Setor Agrícola','Energia','Transporte e Logística','Recursos Humanos') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `setores` enum('Tecnologia da Informação','Saúde e Bem-Estar','Serviços Financeiros','Varejo e Comércio','Educação','Construção Civil','Indústria Manufatureira','Mídia e Entretenimento','Governo e Setor Público','Turismo e Hotelaria','Serviços Imobiliários','Biotecnologia','Sustentabilidade e Meio Ambiente','Marketing e Publicidade','Indústria Alimentícia','Consultoria','Setor Agrícola','Energia','Transporte e Logística','Recursos Humanos') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_setor`),
   UNIQUE KEY `setores` (`setores`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Copiando dados para a tabela mcheck.setores: ~20 rows (aproximadamente)
 INSERT INTO `setores` (`id_setor`, `setores`) VALUES
